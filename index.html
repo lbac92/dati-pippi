@@ -1,35 +1,54 @@
-<header class="hero">
-    <div class="hero-content" data-aos="fade-down">
-        <h1>Visione 2019-2024</h1>
-        <p>L'evoluzione del nostro progetto attraverso i dati.</p>
-    </div>
-</header>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra Dati Aziendali</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<main class="container">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <section class="card" data-aos="fade-up">
-        <h2>Andamento Globale</h2>
-        <p class="description">La crescita costante registrata negli ultimi 5 anni.</p>
-        <div class="chart-container">
-            <canvas id="graficoAndamento"></canvas>
+    <header class="hero">
+        <div class="hero-content" data-aos="fade-down">
+            <h1>Visione 2019-2024</h1>
+            <p>L'evoluzione del nostro progetto attraverso i dati.</p>
         </div>
-    </section>
+    </header>
 
-    <section class="card" data-aos="fade-up" data-aos-delay="100">
-        <h2>Impatto sul Mercato</h2>
-        <p class="description">Percentuale di penetrazione nei settori chiave.</p>
-        <div class="chart-container">
-            <canvas id="graficoTorta"></canvas>
-        </div>
-    </section>
+    <main class="container">
 
-</main>
+        <section class="card" data-aos="fade-up">
+            <h2>Andamento Globale</h2>
+            <p class="description">La crescita costante registrata negli ultimi 5 anni.</p>
+            <div class="chart-container">
+                <canvas id="graficoAndamento"></canvas>
+            </div>
+        </section>
 
-<footer>
-    <p>© 2024 Project Evolution Exhibition</p>
-</footer>
+        <section class="card" data-aos="fade-up" data-aos-delay="100">
+            <h2>Impatto sul Mercato</h2>
+            <p class="description">Percentuale di penetrazione nei settori chiave.</p>
+            <div class="chart-container">
+                <canvas id="graficoTorta"></canvas>
+            </div>
+        </section>
 
-<script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
-<script src="[https://unpkg.com/aos@2.3.1/dist/aos.js](https://unpkg.com/aos@2.3.1/dist/aos.js)"></script>
+    </main>
 
-<script src="script.js"></script>
+    <footer>
+        <p>© 2024 Project Evolution Exhibition</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
