@@ -45,3 +45,16 @@ new Chart(ctx, {
         }
     }
 });
+
+function toggleMenu() {
+        const overlay = document.getElementById('navOverlay');
+        overlay.classList.toggle('active');
+        
+        // Cambia icona da Hamburger a X (opzionale, tocco di classe)
+        const btn = document.querySelector('.menu-btn');
+        if (overlay.classList.contains('active')) {
+            btn.innerHTML = '✕';
+        } else {
+            btn.innerHTML = '☰';
+        }
+    }

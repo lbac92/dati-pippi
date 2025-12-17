@@ -11,6 +11,19 @@
 </head>
 <body>
 
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
+        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
+        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
+        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
+        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
+        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+    </ul>
+    </div>
+
     <div class="background-art"></div>
 
     <nav style="padding: 20px; text-align: center;">
@@ -32,6 +45,20 @@
                 In P.I.P.P.I., l'accoglienza è il primo passo per costruire un'alleanza con la famiglia, 
                 guardando non solo ai bisogni ma alle potenzialità.
             </p>
+        </section>
+
+        <section class="card glass-effect" data-aos="fade-up">
+            <h2>La voce dei protagonisti</h2>
+            <p class="description">Guarda il video racconto dell'esperienza.</p>
+    
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/ScMzIvxBSi4" 
+                    title="Video Player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
         <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">

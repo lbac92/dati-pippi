@@ -99,3 +99,96 @@ footer {
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
+
+/* --- STILE DEL MENU DI NAVIGAZIONE --- */
+
+/* Il bottone Hamburger (le tre lineette) */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000; /* Deve stare sopra a tutto */
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: #e67e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Il pannello del menu (nascosto di default) */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Sfondo quasi coprente */
+    backdrop-filter: blur(15px); /* Sfocatura molto forte */
+    z-index: 1999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden; /* Non cliccabile quando nascosto */
+    transition: all 0.4s ease;
+}
+
+/* Quando il menu è aperto */
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-links {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+/* --- STILE PER I VIDEO (Responsive) --- */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporzione 16:9 (Altezza/Larghezza) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px; /* Arrotondiamo anche il video */
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

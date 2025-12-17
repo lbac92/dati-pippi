@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Evoluzione di P.I.P.P.I.</title>
-    
+    <title>P.I.P.P.I. - Co-costruzione</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <div class="nav-overlay" id="navOverlay">
@@ -23,47 +22,36 @@
         <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
     </ul>
     </div>
-
+    
     <div class="background-art"></div>
 
-    <header class="hero">
+    <nav style="padding: 20px; text-align: center;">
+        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Home</a>
+    </nav>
+
+    <header class="hero" style="height: 40vh;">
         <div class="hero-content" data-aos="fade-down">
-            <h1>5 Anni di P.I.P.P.I.</h1>
-            <p>Storie di famiglie, intrecci e percorsi di crescita condivisa.</p>
+            <h1>Co-costruire il Progetto</h1>
+            <p>Non valutare <i>la</i> famiglia, ma valutare <i>con</i> la famiglia.</p>
         </div>
     </header>
 
     <main class="container">
-
         <section class="card glass-effect" data-aos="fade-up">
-            <div class="card-header">
-                <h2>Famiglie Coinvolte</h2>
-            </div>
-            <p class="description">Il numero crescente di nuclei familiari che hanno partecipato al programma.</p>
-            <div class="chart-container">
-                <canvas id="graficoAndamento"></canvas>
-            </div>
-        </section>
-
-        <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-header">
-                <h2>L'Ecosistema</h2>
-            </div>
-            <p class="description">Come le risorse e le attività si intrecciano per il supporto al bambino.</p>
-            <div class="chart-container">
-                <canvas id="graficoTorta"></canvas>
+            <h2>Il Mondo del Bambino</h2>
+            <p class="description">
+                Attraverso il confronto, analizziamo insieme i punti di forza e le aree di miglioramento 
+                nelle diverse dimensioni della vita del bambino.
+            </p>
+            <div class="chart-container" style="height: 400px;"> <canvas id="graficoCocostruzione"></canvas>
             </div>
         </section>
-
     </main>
 
-    <footer>
-        <p>Progetto P.I.P.P.I. - Un percorso fatto insieme</p>
-    </footer>
+    <footer><p>Stanza 2 - Progettazione Condivisa</p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-
+    <script src="script-cocostruzione.js"></script>
 </body>
 </html>
