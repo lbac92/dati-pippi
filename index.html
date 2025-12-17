@@ -1,2 +1,35 @@
-<h1>Funziona!</h1>
-<p>Il sito della mostra è online.</p>
+<header class="hero">
+    <div class="hero-content" data-aos="fade-down">
+        <h1>Visione 2019-2024</h1>
+        <p>L'evoluzione del nostro progetto attraverso i dati.</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card" data-aos="fade-up">
+        <h2>Andamento Globale</h2>
+        <p class="description">La crescita costante registrata negli ultimi 5 anni.</p>
+        <div class="chart-container">
+            <canvas id="graficoAndamento"></canvas>
+        </div>
+    </section>
+
+    <section class="card" data-aos="fade-up" data-aos-delay="100">
+        <h2>Impatto sul Mercato</h2>
+        <p class="description">Percentuale di penetrazione nei settori chiave.</p>
+        <div class="chart-container">
+            <canvas id="graficoTorta"></canvas>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2024 Project Evolution Exhibition</p>
+</footer>
+
+<script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
+<script src="[https://unpkg.com/aos@2.3.1/dist/aos.js](https://unpkg.com/aos@2.3.1/dist/aos.js)"></script>
+
+<script src="script.js"></script>

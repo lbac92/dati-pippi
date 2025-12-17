@@ -1,0 +1,81 @@
+/* Resettiamo i margini standard del browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a; /* Grigio scuro elegante */
+    color: #e0e0e0; /* Bianco sporco per il testo, meno aggressivo */
+    line-height: 1.6;
+}
+
+/* Stile dell'intestazione (Hero) */
+.hero {
+    height: 60vh; /* Occupa il 60% dell'altezza dello schermo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Sfondo sfumato */
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 300; /* Font sottile ed elegante */
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Contenitore centrale */
+.container {
+    max-width: 800px; /* Non diventa troppo largo su PC */
+    margin: -50px auto 0; /* Sovrappone leggermente l'header */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Le schede dei grafici */
+.card {
+    background-color: #252525;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Ombra profonda */
+}
+
+.card h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    border-left: 4px solid #4bc0c0; /* Linea colorata decorativa a sinistra */
+    padding-left: 15px;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #b0b0b0;
+}
+
+/* Contenitore per rendere il grafico responsive */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
