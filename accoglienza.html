@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.I.P.P.I. - L'Accoglienza</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-art"></div>
+
+    <nav style="padding: 20px; text-align: center;">
+        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Torna all'Intro</a>
+    </nav>
+
+    <header class="hero" style="height: 40vh;"> <div class="hero-content" data-aos="fade-down">
+            <h1>L'Accoglienza</h1>
+            <p>Il primo passo: trasformare il bisogno in risorsa.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card glass-effect" data-aos="fade-up">
+            <h2>Un Cambio di Prospettiva</h2>
+            <p class="description">
+                Nel sistema tradizionale l'accoglienza parte spesso dalla segnalazione del problema. 
+                In P.I.P.P.I., l'accoglienza è il primo passo per costruire un'alleanza con la famiglia, 
+                guardando non solo ai bisogni ma alle potenzialità.
+            </p>
+        </section>
+
+        <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-header">
+                <h2>Analisi della Domanda</h2>
+            </div>
+            <p class="description">Confronto tra le tipologie di richieste iniziali.</p>
+            <div class="chart-container">
+                <canvas id="graficoAccoglienza"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Stanza 1 - Il Sistema di Accoglienza</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="script-accoglienza.js"></script>
+
+</body>
+</html>
