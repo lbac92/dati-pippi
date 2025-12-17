@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostra Dati Aziendali</title>
+    <title>L'Evoluzione di P.I.P.P.I.</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="background-art"></div>
+
     <header class="hero">
         <div class="hero-content" data-aos="fade-down">
-            <h1>Visione 2019-2024</h1>
-            <p>L'evoluzione del nostro progetto attraverso i dati.</p>
+            <h1>5 Anni di P.I.P.P.I.</h1>
+            <p>Storie di famiglie, intrecci e percorsi di crescita condivisa.</p>
         </div>
     </header>
 
     <main class="container">
 
-        <section class="card" data-aos="fade-up">
-            <h2>Andamento Globale</h2>
-            <p class="description">La crescita costante registrata negli ultimi 5 anni.</p>
+        <section class="card glass-effect" data-aos="fade-up">
+            <div class="card-header">
+                <h2>Famiglie Coinvolte</h2>
+            </div>
+            <p class="description">Il numero crescente di nuclei familiari che hanno partecipato al programma.</p>
             <div class="chart-container">
                 <canvas id="graficoAndamento"></canvas>
             </div>
         </section>
 
-        <section class="card" data-aos="fade-up" data-aos-delay="100">
-            <h2>Impatto sul Mercato</h2>
-            <p class="description">Percentuale di penetrazione nei settori chiave.</p>
+        <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-header">
+                <h2>L'Ecosistema</h2>
+            </div>
+            <p class="description">Come le risorse e le attività si intrecciano per il supporto al bambino.</p>
             <div class="chart-container">
                 <canvas id="graficoTorta"></canvas>
             </div>
@@ -41,13 +46,11 @@
     </main>
 
     <footer>
-        <p>© 2024 Project Evolution Exhibition</p>
+        <p>Progetto P.I.P.P.I. - Un percorso fatto insieme</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script src="script.js"></script>
 
 </body>

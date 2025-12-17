@@ -1,78 +1,87 @@
-// Inizializziamo le animazioni (AOS)
+// Inizializza animazioni
 AOS.init({
-    duration: 1000, // Durata dell'animazione in millisecondi
-    once: true // L'animazione avviene solo la prima volta che scorri
+    duration: 1000,
+    once: true
 });
 
-// --- GRAFICO 1: LINEA (Andamento temporale) ---
-// Selezioniamo il "telo" dal file HTML
+// Impostazioni globali per i font dei grafici (usiamo Quicksand anche qui)
+Chart.defaults.font.family = "'Quicksand', sans-serif";
+Chart.defaults.color = '#555';
+
+// --- GRAFICO 1: FAMIGLIE COINVOLTE (Linea curva e morbida) ---
 const ctx1 = document.getElementById('graficoAndamento').getContext('2d');
 
-// Creiamo il grafico
+// Creiamo un gradiente per il riempimento sotto la linea
+let gradient = ctx1.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, 'rgba(255, 159, 64, 0.5)'); // Arancione sfumato
+gradient.addColorStop(1, 'rgba(255, 159, 64, 0.0)'); // Trasparente alla base
+
 new Chart(ctx1, {
-    type: 'line', // Tipo di grafico: Linea
+    type: 'line',
     data: {
-        labels: ['2019', '2020', '2021', '2022', '2023'], // Etichette asse X (Anni)
+        labels: ['2019', '2020', '2021', '2022', '2023'],
         datasets: [{
-            label: 'Valore Progetto',
-            data: [12, 19, 35, 45, 60], // I TUOI DATI NUMERICI QUI
-            borderColor: '#4bc0c0', // Colore della linea (verde acqua)
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore riempimento sotto la linea
-            borderWidth: 2,
-            tension: 0.4, // Curvatura della linea (0 = dritta, 1 = molto curva)
-            fill: true // Riempi l'area sotto la linea
+            label: 'Famiglie PIPPI',
+            data: [12, 19, 35, 45, 60], // DATI FITTIZI
+            borderColor: '#ff9f40', // Arancione caldo
+            backgroundColor: gradient, // Usa il gradiente creato sopra
+            borderWidth: 3,
+            tension: 0.4, // Linea molto curva (morbida)
+            pointBackgroundColor: '#fff', // Punti bianchi
+            pointBorderColor: '#ff9f40', // Bordo punti arancione
+            pointRadius: 6, // Punti più grandi
+            fill: true
         }]
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                display: false // Nascondiamo la legenda per pulizia
-            }
+            legend: { display: false }
         },
         scales: {
             y: {
                 beginAtZero: true,
-                grid: {
-                    color: '#444' // Colore griglia scuro
-                }
+                grid: { borderDash: [5, 5], color: '#e0e0e0' } // Griglia tratteggiata leggera
             },
             x: {
-                grid: {
-                    display: false // Niente griglia verticale
-                }
+                grid: { display: false }
             }
         }
     }
 });
 
-// --- GRAFICO 2: TORTA (Distribuzione) ---
+// --- GRAFICO 2: ECOSISTEMA (Torta dai colori pastello) ---
 const ctx2 = document.getElementById('graficoTorta').getContext('2d');
 
 new Chart(ctx2, {
-    type: 'doughnut', // Tipo: Ciambella
+    type: 'doughnut',
     data: {
-        labels: ['Ricerca', 'Sviluppo', 'Marketing', 'Design'],
+        labels: ['Scuola', 'Famiglia', 'Servizi', 'Comunità'],
         datasets: [{
-            data: [30, 40, 20, 10], // I TUOI DATI QUI
+            data: [35, 25, 25, 15], // DATI FITTIZI
             backgroundColor: [
-                '#ff6384', // Rosso
-                '#36a2eb', // Blu
-                '#ffcd56', // Giallo
+                '#ffcd56', // Giallo sole
+                '#ff6384', // Rosso/Rosa morbido
+                '#36a2eb', // Azzurro cielo
                 '#4bc0c0'  // Verde acqua
             ],
-            borderWidth: 0 // Niente bordi bianchi
+            borderWidth: 2,
+            borderColor: '#ffffff', // Bordo bianco per separare gli spicchi
+            hoverOffset: 10 // Effetto "pop" quando passi sopra col mouse
         }]
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
+        cutout: '60%', // Ciambella più sottile ed elegante
         plugins: {
             legend: {
                 position: 'bottom',
                 labels: {
-                    color: '#fff' // Testo legenda bianco
+                    padding: 20,
+                    usePointStyle: true, // Usa pallini invece di quadrati nella legenda
+                    font: { size: 12 }
                 }
             }
         }
