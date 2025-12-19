@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <div class="nav-overlay" id="navOverlay">
         <ul class="nav-links">
-            <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
+            <li><a href="index.html" onclick="toggleMenu()">🏠 Home</a></li>
             <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
             <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
             <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
@@ -29,50 +30,70 @@
     <header class="hero">
         <div class="hero-content" data-aos="fade-down">
             <h1>Il Percorso P.I.P.P.I.</h1>
-            <p>Tre annualità di crescita, intrecci e supporto alla genitorialità.</p>
+            <p>Tre edizioni di crescita, intrecci e supporto alla genitorialità.</p>
         </div>
     </header>
 
     <main class="container">
 
-        <section class="card glass-effect" data-aos="fade-up">
-            <div class="card-header">
-                <h2>1. L'Evoluzione nel Tempo</h2>
-            </div>
-            <div class="timeline-container">
-                <div class="timeline-card">
-                    <h3>1° Annualità</h3>
-                    <p>👥 <strong>20</strong> Famiglie</p>
-                    <p>🎓 <strong>5</strong> Coach/Formatori</p>
-                    <p><em>Avvio sperimentazione.</em></p>
+        <section data-aos="fade-up">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">1. La Linea del Tempo</h2>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div> <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-effect">
+                        <span class="timeline-title">P.I.P.P.I. 8</span>
+                        <span class="timeline-year">2019 - 2021</span>
+                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+                        <p>👥 <strong>20</strong> Famiglie</p>
+                        <p>🎓 <strong>5</strong> Coach/Formatori</p>
+                    </div>
                 </div>
-                <div class="timeline-card">
-                    <h3>2° Annualità</h3>
-                    <p>👥 <strong>25</strong> Famiglie</p>
-                    <p>🎓 <strong>7</strong> Coach/Formatori</p>
-                    <span class="highlight">✨ Introdotto dispositivo sostegno genitorialità</span>
+
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-effect">
+                        <span class="timeline-title">P.I.P.P.I. 10</span>
+                        <span class="timeline-year">2021 - 2023</span>
+                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+                        <p>👥 <strong>25</strong> Famiglie</p>
+                        <p>✨ Dispositivo Sostegno Genitorialità</p>
+                    </div>
                 </div>
-                <div class="timeline-card">
-                    <h3>3° Annualità</h3>
-                    <p>👥 <strong>30</strong> Famiglie</p>
-                    <p>🎓 <strong>10</strong> Coach/Formatori</p>
-                    <span class="highlight">🤝 Avvio Gruppo di Lavoro Permanente</span>
+
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-effect">
+                        <span class="timeline-title">P.I.P.P.I. 12</span>
+                        <span class="timeline-year">2023 - 2025</span>
+                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+                        <p>👥 <strong>30</strong> Famiglie</p>
+                        <p>🤝 Gruppo di Lavoro Permanente</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">2. I Protagonisti</h2>
+        
         <div class="grid-2-col">
-            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+            <section class="card glass-effect" data-aos="fade-right">
                 <div class="card-header">
                     <h2>Drop-out</h2>
                 </div>
-                <div class="big-stat">8</div>
-                <span class="stat-label">Famiglie uscite dal programma<br>(su 75 totali)</span>
+                <div style="display: flex; align-items: center; justify-content: center; height: 200px; flex-direction: column;">
+                    <span style="font-size: 5rem; font-weight: bold; color: #e74c3c;">8</span>
+                    <span style="font-size: 1.2rem; color: #555;">Famiglie uscite</span>
+                    <small>Su un totale di 75 (10.6%)</small>
+                </div>
             </section>
 
-            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="200">
+            <section class="card glass-effect" data-aos="fade-left">
                 <div class="card-header">
-                    <h2>Tipologia Familiare</h2>
+                    <h2>Chi sono le famiglie?</h2>
                 </div>
                 <div class="chart-container">
                     <canvas id="familyTypeChart"></canvas>
@@ -80,32 +101,43 @@
             </section>
         </div>
 
+        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
+            <div class="card-header">
+                <h2>La Rete degli Operatori</h2>
+            </div>
+            <div class="chart-container" style="height: 250px;">
+                <canvas id="operatorsChart"></canvas>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Impatto e Risultati</h2>
+
         <div class="grid-2-col">
             <section class="card glass-effect" data-aos="fade-up">
                 <div class="card-header">
-                    <h2>Rete Operatori</h2>
-                </div>
-                <div class="chart-container">
-                    <canvas id="operatorsChart"></canvas>
-                </div>
-            </section>
-
-            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-header">
-                    <h2>Aree di Fragilità</h2>
+                    <h2>Aree di Fragilità Emerse</h2>
                 </div>
                 <div class="chart-container">
                     <canvas id="fragilityChart"></canvas>
                 </div>
             </section>
+            
+            <section class="card glass-effect" data-aos="fade-up" style="display: flex; align-items: center;">
+                <div>
+                    <h3>Lettura dei dati</h3>
+                    <p>Le fragilità principali riguardano la sfera relazionale ed educativa. Tuttavia, grazie all'intervento multidisciplinare, abbiamo osservato una netta espansione delle competenze genitoriali, come mostrato nel grafico sottostante.</p>
+                </div>
+            </section>
         </div>
 
-        <section class="card glass-effect" data-aos="fade-up">
-            <div class="card-header">
-                <h2>L'Impatto: Il Triangolo P.I.P.P.I.</h2>
+        <section class="card glass-effect" data-aos="zoom-in">
+            <div class="card-header" style="text-align: center;">
+                <h2>Il Triangolo P.I.P.P.I. (Outcome)</h2>
+                <p>Confronto dimensione competenze: <span style="color:#e74c3c">■ Inizio</span> vs <span style="color:#2ecc71">■ Fine</span></p>
             </div>
-            <p class="description">Confronto tra le competenze rilevate all'inizio (Rosso) e alla fine del percorso (Verde).</p>
-            <div class="chart-container" style="max-width: 600px; margin: 0 auto;">
+            <div class="chart-container-large">
                 <canvas id="pippiChart"></canvas>
             </div>
         </section>
@@ -116,15 +148,17 @@
         <p>Progetto P.I.P.P.I. - Report Triennale</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-
+    <script src="script.js"></script> 
+    
     <script>
-        // Inizializza AOS (Animazioni)
         AOS.init();
 
-        // 1. Tipologia Famiglie (Ciambella)
+        // Configurazione globale font Chart.js per leggibilità
+        Chart.defaults.font.family = "'Quicksand', sans-serif";
+        Chart.defaults.font.size = 14;
+
+        // 1. FAMIGLIE (Ciambella)
         new Chart(document.getElementById('familyTypeChart'), {
             type: 'doughnut',
             data: {
@@ -135,44 +169,58 @@
                     borderWidth: 0
                 }]
             },
-            options: { plugins: { legend: { position: 'bottom' } } }
-        });
-
-        // 2. Operatori (Barre Orizzontali)
-        new Chart(document.getElementById('operatorsChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Comune', 'Consultorio', 'NPI', 'Terzo Settore'],
-                datasets: [{
-                    label: 'Operatori',
-                    data: [12, 8, 5, 10],
-                    backgroundColor: 'rgba(255, 255, 255, 0.6)', // Bianco semitrasparente per stare sul glass
-                    borderColor: '#fff',
-                    borderWidth: 1
-                }]
-            },
-            options: { indexAxis: 'y', scales: { x: { grid: { color: 'rgba(0,0,0,0.1)' } } } }
-        });
-
-        // 3. Fragilità (Barre Verticali)
-        new Chart(document.getElementById('fragilityChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Economica', 'Relazionale', 'Abitativa', 'Educativa'],
-                datasets: [{
-                    label: 'Famiglie',
-                    data: [30, 50, 15, 40],
-                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                    borderRadius: 5
-                }]
+            options: { 
+                plugins: { legend: { position: 'right' } },
+                maintainAspectRatio: false
             }
         });
 
-        // 4. Triangolo PIPPI (Radar)
+        // 2. OPERATORI (Barre Orizzontali)
+        new Chart(document.getElementById('operatorsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Servizi Sociali Comune', 'Consultorio Familiare', 'Neuropsichiatria (NPI)', 'Terzo Settore', 'Scuola'],
+                datasets: [{
+                    label: 'Numero Operatori',
+                    data: [12, 8, 5, 10, 3],
+                    backgroundColor: '#34495e',
+                    borderRadius: 4,
+                    barThickness: 20
+                }]
+            },
+            options: { 
+                indexAxis: 'y', 
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 3. FRAGILITA (Barre Verticali)
+        new Chart(document.getElementById('fragilityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Economica', 'Relazionale', 'Abitativa', 'Educativa', 'Salute'],
+                datasets: [{
+                    label: 'Famiglie',
+                    data: [30, 50, 15, 40, 20],
+                    backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                    borderRadius: 5
+                }]
+            },
+            options: { maintainAspectRatio: false }
+        });
+
+        // 4. TRIANGOLO PIPPI (Radar Grande)
         new Chart(document.getElementById('pippiChart'), {
             type: 'radar',
             data: {
-                labels: ['Risposta ai bisogni', 'Relazioni familiari', 'Relazioni sociali', 'Salute/Sicurezza', 'Scuola'],
+                labels: [
+                    'Risposta ai bisogni', 
+                    'Relazioni familiari', 
+                    'Relazioni sociali', 
+                    'Salute/Sicurezza', 
+                    'Scuola/Apprendimento'
+                ],
                 datasets: [
                     {
                         label: 'Pre-Intervento',
@@ -180,7 +228,8 @@
                         fill: true,
                         backgroundColor: 'rgba(231, 76, 60, 0.2)',
                         borderColor: '#e74c3c',
-                        pointBackgroundColor: '#e74c3c'
+                        pointBackgroundColor: '#e74c3c',
+                        borderWidth: 2
                     },
                     {
                         label: 'Post-Intervento',
@@ -188,17 +237,36 @@
                         fill: true,
                         backgroundColor: 'rgba(46, 204, 113, 0.2)',
                         borderColor: '#2ecc71',
-                        pointBackgroundColor: '#2ecc71'
+                        pointBackgroundColor: '#2ecc71',
+                        borderWidth: 2
                     }
                 ]
             },
             options: {
+                maintainAspectRatio: false, // Importante per occupare tutto lo spazio
                 scales: {
                     r: {
-                        grid: { color: 'rgba(0,0,0,0.1)' },
                         angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: {
+                            font: {
+                                size: 16, // Font più grande per le etichette esterne
+                                weight: 'bold'
+                            },
+                            color: '#333'
+                        },
                         suggestedMin: 0,
-                        suggestedMax: 10
+                        suggestedMax: 10,
+                        ticks: {
+                            backdropColor: 'transparent', // Toglie lo sfondo ai numeri dell'asse
+                            font: { size: 12 }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { font: { size: 14 } }
                     }
                 }
             }
