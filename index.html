@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Evoluzione di P.I.P.P.I.</title>
+    <title>Report Generale P.I.P.P.I.</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <div class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
-        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
-        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
-        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
-        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
-        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
+            <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
+            <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
+            <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
+            <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
+            <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+        </ul>
     </div>
 
     <div class="background-art"></div>
 
     <header class="hero">
         <div class="hero-content" data-aos="fade-down">
-            <h1>5 Anni di P.I.P.P.I.</h1>
-            <p>Storie di famiglie, intrecci e percorsi di crescita condivisa.</p>
+            <h1>Il Percorso P.I.P.P.I.</h1>
+            <p>Tre annualità di crescita, intrecci e supporto alla genitorialità.</p>
         </div>
     </header>
 
@@ -37,33 +37,173 @@
 
         <section class="card glass-effect" data-aos="fade-up">
             <div class="card-header">
-                <h2>Famiglie Coinvolte</h2>
+                <h2>1. L'Evoluzione nel Tempo</h2>
             </div>
-            <p class="description">Il numero crescente di nuclei familiari che hanno partecipato al programma.</p>
-            <div class="chart-container">
-                <canvas id="graficoAndamento"></canvas>
+            <div class="timeline-container">
+                <div class="timeline-card">
+                    <h3>1° Annualità</h3>
+                    <p>👥 <strong>20</strong> Famiglie</p>
+                    <p>🎓 <strong>5</strong> Coach/Formatori</p>
+                    <p><em>Avvio sperimentazione.</em></p>
+                </div>
+                <div class="timeline-card">
+                    <h3>2° Annualità</h3>
+                    <p>👥 <strong>25</strong> Famiglie</p>
+                    <p>🎓 <strong>7</strong> Coach/Formatori</p>
+                    <span class="highlight">✨ Introdotto dispositivo sostegno genitorialità</span>
+                </div>
+                <div class="timeline-card">
+                    <h3>3° Annualità</h3>
+                    <p>👥 <strong>30</strong> Famiglie</p>
+                    <p>🎓 <strong>10</strong> Coach/Formatori</p>
+                    <span class="highlight">🤝 Avvio Gruppo di Lavoro Permanente</span>
+                </div>
             </div>
         </section>
 
-        <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+        <div class="grid-2-col">
+            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <h2>Drop-out</h2>
+                </div>
+                <div class="big-stat">8</div>
+                <span class="stat-label">Famiglie uscite dal programma<br>(su 75 totali)</span>
+            </section>
+
+            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <h2>Tipologia Familiare</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="familyTypeChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2-col">
+            <section class="card glass-effect" data-aos="fade-up">
+                <div class="card-header">
+                    <h2>Rete Operatori</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="operatorsChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <h2>Aree di Fragilità</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="fragilityChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <section class="card glass-effect" data-aos="fade-up">
             <div class="card-header">
-                <h2>L'Ecosistema</h2>
+                <h2>L'Impatto: Il Triangolo P.I.P.P.I.</h2>
             </div>
-            <p class="description">Come le risorse e le attività si intrecciano per il supporto al bambino.</p>
-            <div class="chart-container">
-                <canvas id="graficoTorta"></canvas>
+            <p class="description">Confronto tra le competenze rilevate all'inizio (Rosso) e alla fine del percorso (Verde).</p>
+            <div class="chart-container" style="max-width: 600px; margin: 0 auto;">
+                <canvas id="pippiChart"></canvas>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>Progetto P.I.P.P.I. - Un percorso fatto insieme</p>
+        <p>Progetto P.I.P.P.I. - Report Triennale</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        // Inizializza AOS (Animazioni)
+        AOS.init();
+
+        // 1. Tipologia Famiglie (Ciambella)
+        new Chart(document.getElementById('familyTypeChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Monogenitoriali', 'Nucleo completo', 'Famiglie ricostituite', 'Con affido'],
+                datasets: [{
+                    data: [15, 45, 10, 5],
+                    backgroundColor: ['#3498db', '#2ecc71', '#f1c40f', '#9b59b6'],
+                    borderWidth: 0
+                }]
+            },
+            options: { plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // 2. Operatori (Barre Orizzontali)
+        new Chart(document.getElementById('operatorsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Comune', 'Consultorio', 'NPI', 'Terzo Settore'],
+                datasets: [{
+                    label: 'Operatori',
+                    data: [12, 8, 5, 10],
+                    backgroundColor: 'rgba(255, 255, 255, 0.6)', // Bianco semitrasparente per stare sul glass
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: { indexAxis: 'y', scales: { x: { grid: { color: 'rgba(0,0,0,0.1)' } } } }
+        });
+
+        // 3. Fragilità (Barre Verticali)
+        new Chart(document.getElementById('fragilityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Economica', 'Relazionale', 'Abitativa', 'Educativa'],
+                datasets: [{
+                    label: 'Famiglie',
+                    data: [30, 50, 15, 40],
+                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                    borderRadius: 5
+                }]
+            }
+        });
+
+        // 4. Triangolo PIPPI (Radar)
+        new Chart(document.getElementById('pippiChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Risposta ai bisogni', 'Relazioni familiari', 'Relazioni sociali', 'Salute/Sicurezza', 'Scuola'],
+                datasets: [
+                    {
+                        label: 'Pre-Intervento',
+                        data: [3, 4, 2, 5, 3],
+                        fill: true,
+                        backgroundColor: 'rgba(231, 76, 60, 0.2)',
+                        borderColor: '#e74c3c',
+                        pointBackgroundColor: '#e74c3c'
+                    },
+                    {
+                        label: 'Post-Intervento',
+                        data: [7, 8, 6, 8, 7],
+                        fill: true,
+                        backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                        borderColor: '#2ecc71',
+                        pointBackgroundColor: '#2ecc71'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    r: {
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
