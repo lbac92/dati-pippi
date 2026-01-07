@@ -16,7 +16,7 @@
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="nav-overlay" id="navOverlay">
         <ul class="nav-links">
-            <li><a href="index.html" onclick="toggleMenu()">🏠 Home</a></li>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
             <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
             <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
             <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
@@ -40,14 +40,16 @@
             <h2 style="text-align: center; margin-bottom: 40px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">1. La Linea del Tempo</h2>
             
             <div class="timeline-wrapper">
-                <div class="timeline-line"></div> <div class="timeline-step">
+                <div class="timeline-line"></div> 
+                
+                <div class="timeline-step">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content glass-effect">
                         <span class="timeline-title">P.I.P.P.I. 8</span>
                         <span class="timeline-year">2019 - 2021</span>
-                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-                        <p>👥 <strong>20</strong> Famiglie</p>
-                        <p>🎓 <strong>5</strong> Coach/Formatori</p>
+                        <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+                        <p><strong>20</strong> Famiglie coinvolte</p>
+                        <p><strong>5</strong> Coach/Formatori</p>
                     </div>
                 </div>
 
@@ -56,9 +58,9 @@
                     <div class="timeline-content glass-effect">
                         <span class="timeline-title">P.I.P.P.I. 10</span>
                         <span class="timeline-year">2021 - 2023</span>
-                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-                        <p>👥 <strong>25</strong> Famiglie</p>
-                        <p>✨ Dispositivo Sostegno Genitorialità</p>
+                        <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+                        <p><strong>25</strong> Famiglie coinvolte</p>
+                        <p style="color: #e67e22; font-weight: 600;">Dispositivo Sostegno Genitorialità</p>
                     </div>
                 </div>
 
@@ -67,9 +69,9 @@
                     <div class="timeline-content glass-effect">
                         <span class="timeline-title">P.I.P.P.I. 12</span>
                         <span class="timeline-year">2023 - 2025</span>
-                        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-                        <p>👥 <strong>30</strong> Famiglie</p>
-                        <p>🤝 Gruppo di Lavoro Permanente</p>
+                        <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+                        <p><strong>30</strong> Famiglie coinvolte</p>
+                        <p style="color: #e67e22; font-weight: 600;">Gruppo di Lavoro Permanente</p>
                     </div>
                 </div>
             </div>
@@ -84,10 +86,10 @@
                 <div class="card-header">
                     <h2>Drop-out</h2>
                 </div>
-                <div style="display: flex; align-items: center; justify-content: center; height: 200px; flex-direction: column;">
+                <div style="display: flex; align-items: center; justify-content: center; height: 250px; flex-direction: column;">
                     <span style="font-size: 5rem; font-weight: bold; color: #e74c3c;">8</span>
                     <span style="font-size: 1.2rem; color: #555;">Famiglie uscite</span>
-                    <small>Su un totale di 75 (10.6%)</small>
+                    <small style="margin-top: 10px;">Su un totale di 75 (10.6%)</small>
                 </div>
             </section>
 
@@ -95,7 +97,7 @@
                 <div class="card-header">
                     <h2>Chi sono le famiglie?</h2>
                 </div>
-                <div class="chart-container">
+                <div class="chart-container" style="height: 250px;">
                     <canvas id="familyTypeChart"></canvas>
                 </div>
             </section>
@@ -103,9 +105,9 @@
 
         <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
             <div class="card-header">
-                <h2>La Rete degli Operatori</h2>
+                <h2>Rete Territoriale Operatori</h2>
             </div>
-            <div class="chart-container" style="height: 250px;">
+            <div class="chart-container" style="height: 300px;">
                 <canvas id="operatorsChart"></canvas>
             </div>
         </section>
@@ -125,9 +127,9 @@
             </section>
             
             <section class="card glass-effect" data-aos="fade-up" style="display: flex; align-items: center;">
-                <div>
-                    <h3>Lettura dei dati</h3>
-                    <p>Le fragilità principali riguardano la sfera relazionale ed educativa. Tuttavia, grazie all'intervento multidisciplinare, abbiamo osservato una netta espansione delle competenze genitoriali, come mostrato nel grafico sottostante.</p>
+                <div style="padding: 10px;">
+                    <h3 style="color: #34495e;">Analisi dei bisogni</h3>
+                    <p>I dati evidenziano come le fragilità principali riguardino la sfera relazionale ed educativa. L'intervento multidisciplinare mira proprio a rafforzare queste competenze, riducendo i fattori di rischio.</p>
                 </div>
             </section>
         </div>
@@ -135,8 +137,9 @@
         <section class="card glass-effect" data-aos="zoom-in">
             <div class="card-header" style="text-align: center;">
                 <h2>Il Triangolo P.I.P.P.I. (Outcome)</h2>
-                <p>Confronto dimensione competenze: <span style="color:#e74c3c">■ Inizio</span> vs <span style="color:#2ecc71">■ Fine</span></p>
+                <p>Confronto punteggi medi: <span style="color:#e74c3c">■ Inizio (Pre)</span> vs <span style="color:#27ae60">■ Fine (Post)</span></p>
             </div>
+            
             <div class="chart-container-large">
                 <canvas id="pippiChart"></canvas>
             </div>
@@ -153,10 +156,8 @@
     
     <script>
         AOS.init();
-
-        // Configurazione globale font Chart.js per leggibilità
         Chart.defaults.font.family = "'Quicksand', sans-serif";
-        Chart.defaults.font.size = 14;
+        Chart.defaults.font.size = 13;
 
         // 1. FAMIGLIE (Ciambella)
         new Chart(document.getElementById('familyTypeChart'), {
@@ -170,22 +171,26 @@
                 }]
             },
             options: { 
-                plugins: { legend: { position: 'right' } },
+                plugins: { 
+                    legend: { 
+                        position: 'bottom', // Legenda in basso per mobile
+                        labels: { padding: 20 }
+                    } 
+                },
                 maintainAspectRatio: false
             }
         });
 
-        // 2. OPERATORI (Barre Orizzontali)
+        // 2. OPERATORI
         new Chart(document.getElementById('operatorsChart'), {
             type: 'bar',
             data: {
-                labels: ['Servizi Sociali Comune', 'Consultorio Familiare', 'Neuropsichiatria (NPI)', 'Terzo Settore', 'Scuola'],
+                labels: ['Servizi Sociali Comune', 'Consultorio Familiare', 'NPI', 'Terzo Settore', 'Scuola'],
                 datasets: [{
                     label: 'Numero Operatori',
                     data: [12, 8, 5, 10, 3],
                     backgroundColor: '#34495e',
-                    borderRadius: 4,
-                    barThickness: 20
+                    borderRadius: 4
                 }]
             },
             options: { 
@@ -195,7 +200,7 @@
             }
         });
 
-        // 3. FRAGILITA (Barre Verticali)
+        // 3. FRAGILITA
         new Chart(document.getElementById('fragilityChart'), {
             type: 'bar',
             data: {
@@ -210,64 +215,49 @@
             options: { maintainAspectRatio: false }
         });
 
-        // 4. TRIANGOLO PIPPI (Radar Grande)
+        // 4. TRIANGOLO PIPPI (BARRE ORIZZONTALI DI CONFRONTO)
         new Chart(document.getElementById('pippiChart'), {
-            type: 'radar',
+            type: 'bar',
             data: {
                 labels: [
-                    'Risposta ai bisogni', 
+                    'Risposta ai bisogni di sviluppo', 
                     'Relazioni familiari', 
                     'Relazioni sociali', 
-                    'Salute/Sicurezza', 
-                    'Scuola/Apprendimento'
+                    'Salute e Sicurezza', 
+                    'Scuola e Apprendimento'
                 ],
                 datasets: [
                     {
-                        label: 'Pre-Intervento',
-                        data: [3, 4, 2, 5, 3],
-                        fill: true,
-                        backgroundColor: 'rgba(231, 76, 60, 0.2)',
-                        borderColor: '#e74c3c',
-                        pointBackgroundColor: '#e74c3c',
-                        borderWidth: 2
+                        label: 'Inizio Percorso',
+                        data: [3.5, 4.0, 2.5, 5.0, 3.2], // Dati Pre
+                        backgroundColor: '#e74c3c', // Rosso
+                        borderRadius: 4,
+                        barPercentage: 0.6
                     },
                     {
-                        label: 'Post-Intervento',
-                        data: [7, 8, 6, 8, 7],
-                        fill: true,
-                        backgroundColor: 'rgba(46, 204, 113, 0.2)',
-                        borderColor: '#2ecc71',
-                        pointBackgroundColor: '#2ecc71',
-                        borderWidth: 2
+                        label: 'Fine Percorso',
+                        data: [7.2, 8.1, 6.5, 8.0, 7.5], // Dati Post
+                        backgroundColor: '#27ae60', // Verde
+                        borderRadius: 4,
+                        barPercentage: 0.6
                     }
                 ]
             },
             options: {
-                maintainAspectRatio: false, // Importante per occupare tutto lo spazio
+                indexAxis: 'y', // Rende le barre orizzontali
+                maintainAspectRatio: false,
                 scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0,0,0,0.1)' },
-                        grid: { color: 'rgba(0,0,0,0.1)' },
-                        pointLabels: {
-                            font: {
-                                size: 16, // Font più grande per le etichette esterne
-                                weight: 'bold'
-                            },
-                            color: '#333'
-                        },
-                        suggestedMin: 0,
-                        suggestedMax: 10,
-                        ticks: {
-                            backdropColor: 'transparent', // Toglie lo sfondo ai numeri dell'asse
-                            font: { size: 12 }
-                        }
+                    x: {
+                        beginAtZero: true,
+                        max: 10, // Scala fissa fino a 10 (Punteggio PIPPI)
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
                     }
                 },
                 plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: { font: { size: 14 } }
-                    }
+                    legend: { position: 'bottom' }
                 }
             }
         });

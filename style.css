@@ -193,54 +193,8 @@ footer {
     border: 0;
 }
 
-/* --- AGGIUNTE PER LA DASHBOARD --- */
-
-/* Timeline Layout */
-.timeline-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.timeline-card {
-    flex: 1;
-    min-width: 250px;
-    border-left: 4px solid rgba(255, 255, 255, 0.5); /* Linea laterale */
-    padding-left: 15px;
-}
-
-.highlight {
-    color: #ff6b6b; /* Un colore di accento per le novità */
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
-
-/* Griglia per i grafici piccoli */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-/* Numero Grande per il Drop-out */
-.big-stat {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #e74c3c;
-    text-align: center;
-}
-.stat-label {
-    text-align: center;
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
 /* --- NUOVO STILE TIMELINE (Linea del Tempo) --- */
+/* --- STILE TIMELINE (RESPONSIVE) --- */
 .timeline-wrapper {
     position: relative;
     padding: 40px 0;
@@ -250,47 +204,42 @@ footer {
     align-items: flex-start;
 }
 
-/* La linea orizzontale di sfondo */
+/* La linea di connessione */
 .timeline-line {
     position: absolute;
-    top: 55px; /* Allinea la linea con i pallini */
+    background-color: rgba(52, 152, 219, 0.3);
+    z-index: 0;
+    /* Default Desktop: Orizzontale */
+    top: 55px; 
     left: 10%;
     width: 80%;
     height: 4px;
-    background-color: rgba(255, 255, 255, 0.3); /* Linea semitrasparente */
-    z-index: 0;
 }
 
 .timeline-step {
     position: relative;
     z-index: 1;
-    width: 30%; /* Spazio per ogni step */
+    width: 30%;
     text-align: center;
 }
 
-/* Il Pallino */
+/* Pallino */
 .timeline-dot {
     width: 30px;
     height: 30px;
     background-color: #3498db;
     border: 4px solid #fff;
     border-radius: 50%;
-    margin: 0 auto 20px auto; /* Centrato */
+    margin: 0 auto 20px auto;
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-    transition: transform 0.3s ease;
 }
 
-.timeline-step:hover .timeline-dot {
-    transform: scale(1.3);
-    background-color: #e67e22; /* Cambia colore al passaggio del mouse */
-}
-
-/* Contenuto sotto il pallino */
 .timeline-content {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.8);
 }
 
 .timeline-year {
@@ -302,11 +251,43 @@ footer {
 }
 
 .timeline-title {
-    color: #e67e22; /* Arancione per PIPPI 8, 10, 12 */
+    color: #e67e22; 
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+}
+
+/* --- MEDIA QUERY: TRASFORMAZIONE PER SMARTPHONE --- */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        flex-direction: column; /* Impila verticalmente */
+        padding-left: 0;
+    }
+
+    /* La linea diventa verticale a sinistra */
+    .timeline-line {
+        width: 4px;
+        height: 90%;
+        top: 20px;
+        left: 28px; /* Allineato con i pallini */
+    }
+
+    .timeline-step {
+        width: 100%;
+        display: flex; /* Mette pallino e contenuto affiancati */
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .timeline-dot {
+        margin: 0 20px 0 15px; /* Margine laterale */
+        flex-shrink: 0; /* Impedisce al pallino di schiacciarsi */
+    }
+
+    .timeline-content {
+        flex-grow: 1; /* Il contenuto occupa tutto lo spazio rimanente */
+    }
 }
 
 /* --- MIGLIORAMENTI GRAFICI --- */
