@@ -301,3 +301,29 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.3);
     margin: 40px 0;
 }
+
+/* --- AGGIUNTE PER LE FRAGILITÀ --- */
+.btn-expand {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    margin: 20px auto 0 auto; /* Centrato */
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.btn-expand:hover {
+    background: #3498db;
+    color: white;
+}
+
+#extraFragilityContainer {
+    margin-top: 30px;
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+}

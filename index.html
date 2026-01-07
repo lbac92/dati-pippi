@@ -48,8 +48,8 @@
                         <span class="timeline-title">P.I.P.P.I. 8</span>
                         <span class="timeline-year">2019 - 2021</span>
                         <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
-                        <p><strong>20</strong> Famiglie coinvolte</p>
-                        <p><strong>5</strong> Coach/Formatori</p>
+                        <p><strong>10</strong> Famiglie (Livello Base)</p>
+                        <p><strong>2</strong> Coach</p>
                     </div>
                 </div>
 
@@ -59,8 +59,9 @@
                         <span class="timeline-title">P.I.P.P.I. 10</span>
                         <span class="timeline-year">2021 - 2023</span>
                         <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
-                        <p><strong>25</strong> Famiglie coinvolte</p>
-                        <p style="color: #e67e22; font-weight: 600;">Dispositivo Sostegno Genitorialità</p>
+                        <p><strong>22</strong> Famiglie (Livello Avanzato)</p>
+                        <p><strong>2</strong> Coach | <strong>3</strong> Formatori</p>
+                        <p style="color: #e67e22; font-weight: 600; margin-top:5px;">★ Attivazione Dispositivo Sostegno Genitorialità</p>
                     </div>
                 </div>
 
@@ -70,8 +71,10 @@
                         <span class="timeline-title">P.I.P.P.I. 12</span>
                         <span class="timeline-year">2023 - 2025</span>
                         <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
-                        <p><strong>30</strong> Famiglie coinvolte</p>
-                        <p style="color: #e67e22; font-weight: 600;">Gruppo di Lavoro Permanente</p>
+                        <p><strong>13</strong> Famiglie (Livello Avanzato)</p>
+                        <p><strong>2</strong> Coach | <strong>3</strong> Formatori</p>
+                        <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">Dispositivo Sostegno Genitorialità</p>
+                        <p style="color: #e67e22; font-weight: 600;">★ Gruppo di Lavoro Permanente</p>
                     </div>
                 </div>
             </div>
@@ -87,9 +90,9 @@
                     <h2>Drop-out</h2>
                 </div>
                 <div style="display: flex; align-items: center; justify-content: center; height: 250px; flex-direction: column;">
-                    <span style="font-size: 5rem; font-weight: bold; color: #e74c3c;">8</span>
+                    <span style="font-size: 5rem; font-weight: bold; color: #e74c3c;">6</span>
                     <span style="font-size: 1.2rem; color: #555;">Famiglie uscite</span>
-                    <small style="margin-top: 10px;">Su un totale di 75 (10.6%)</small>
+                    <small style="margin-top: 10px;">Su un totale di 45 (13.3%)</small>
                 </div>
             </section>
 
@@ -114,25 +117,26 @@
 
         <div class="section-divider"></div>
 
-        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Impatto e Risultati</h2>
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Impatto e Fragilità</h2>
 
-        <div class="grid-2-col">
-            <section class="card glass-effect" data-aos="fade-up">
-                <div class="card-header">
-                    <h2>Aree di Fragilità Emerse</h2>
-                </div>
-                <div class="chart-container">
-                    <canvas id="fragilityChart"></canvas>
-                </div>
-            </section>
+        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
+            <div class="card-header">
+                <h2>Aree di Fragilità Emerse</h2>
+                <p>Percentuali calcolate sul totale delle famiglie che hanno concluso il percorso.</p>
+            </div>
             
-            <section class="card glass-effect" data-aos="fade-up" style="display: flex; align-items: center;">
-                <div style="padding: 10px;">
-                    <h3 style="color: #34495e;">Analisi dei bisogni</h3>
-                    <p>I dati evidenziano come le fragilità principali riguardino la sfera relazionale ed educativa. L'intervento multidisciplinare mira proprio a rafforzare queste competenze, riducendo i fattori di rischio.</p>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="fragilityChart"></canvas>
+            </div>
+
+            <button id="btnFragility" class="btn-expand" onclick="toggleFragility()">Vedi tutte le altre fragilità ▼</button>
+
+            <div id="extraFragilityContainer" style="display: none;">
+                <h3 style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 15px;">Altre fragilità rilevate (Incidenza minore)</h3>
+                <div class="chart-container" style="height: 400px;"> <canvas id="fragilitySecondaryChart"></canvas>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <section class="card glass-effect" data-aos="zoom-in">
             <div class="card-header" style="text-align: center;">
@@ -159,7 +163,20 @@
         Chart.defaults.font.family = "'Quicksand', sans-serif";
         Chart.defaults.font.size = 13;
 
-        // 1. FAMIGLIE (Ciambella)
+        // --- FUNZIONE PER MOSTRARE/NASCONDERE FRAGILITÀ ---
+        function toggleFragility() {
+            var x = document.getElementById("extraFragilityContainer");
+            var btn = document.getElementById("btnFragility");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                btn.innerHTML = "Nascondi dettagli ▲";
+            } else {
+                x.style.display = "none";
+                btn.innerHTML = "Vedi tutte le altre fragilità ▼";
+            }
+        }
+
+        // 1. FAMIGLIE (Ciambella - DATI FITTIZI IN ATTESA)
         new Chart(document.getElementById('familyTypeChart'), {
             type: 'doughnut',
             data: {
@@ -172,16 +189,13 @@
             },
             options: { 
                 plugins: { 
-                    legend: { 
-                        position: 'bottom', // Legenda in basso per mobile
-                        labels: { padding: 20 }
-                    } 
+                    legend: { position: 'bottom', labels: { padding: 20 } } 
                 },
                 maintainAspectRatio: false
             }
         });
 
-        // 2. OPERATORI
+        // 2. OPERATORI (DATI FITTIZI IN ATTESA)
         new Chart(document.getElementById('operatorsChart'), {
             type: 'bar',
             data: {
@@ -200,22 +214,57 @@
             }
         });
 
-        // 3. FRAGILITA
+        // 3a. FRAGILITA PRINCIPALI (Verticali - Dati Reali)
         new Chart(document.getElementById('fragilityChart'), {
             type: 'bar',
             data: {
-                labels: ['Economica', 'Relazionale', 'Abitativa', 'Educativa', 'Salute'],
+                labels: ['Economica', 'Eventi Traumatici', 'Abitativa', 'Assenza Genitori', 'Disagio Psic. Bambino', 'Isolamento Sociale'],
                 datasets: [{
-                    label: 'Famiglie',
-                    data: [30, 50, 15, 40, 20],
-                    backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                    label: '% Famiglie',
+                    data: [51, 46, 42, 40, 40, 37],
+                    backgroundColor: [
+                        '#c0392b', '#c0392b', '#e74c3c', '#e74c3c', '#e74c3c', '#e74c3c'
+                    ],
                     borderRadius: 5
                 }]
             },
-            options: { maintainAspectRatio: false }
+            options: { 
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 60 } // Max un po' più alto del 51% per estetica
+                }
+            }
         });
 
-        // 4. TRIANGOLO PIPPI (BARRE ORIZZONTALI DI CONFRONTO)
+        // 3b. FRAGILITA SECONDARIE (Orizzontali - Dati Reali)
+        new Chart(document.getElementById('fragilitySecondaryChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Disagio Psic. Famiglia', 'Bassa Scolarizzazione', 'Migrazione', 
+                    'Incuria/Negligenza', 'Disabilità Bambino', 'Conflittualità Coppia', 
+                    'Maltrattamento', 'Transgenerazionale', 'Altro'
+                ],
+                datasets: [{
+                    label: '% Famiglie',
+                    data: [34, 31, 23, 20, 20, 20, 11, 11, 9],
+                    backgroundColor: '#3498db', // Blu per differenziare
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: { 
+                indexAxis: 'y', // Orizzontale
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, max: 40 }
+                }
+            }
+        });
+
+        // 4. TRIANGOLO PIPPI (Confronto - DATI FITTIZI IN ATTESA)
         new Chart(document.getElementById('pippiChart'), {
             type: 'bar',
             data: {
@@ -229,36 +278,28 @@
                 datasets: [
                     {
                         label: 'Inizio Percorso',
-                        data: [3.5, 4.0, 2.5, 5.0, 3.2], // Dati Pre
-                        backgroundColor: '#e74c3c', // Rosso
+                        data: [3.5, 4.0, 2.5, 5.0, 3.2], 
+                        backgroundColor: '#e74c3c', 
                         borderRadius: 4,
                         barPercentage: 0.6
                     },
                     {
                         label: 'Fine Percorso',
-                        data: [7.2, 8.1, 6.5, 8.0, 7.5], // Dati Post
-                        backgroundColor: '#27ae60', // Verde
+                        data: [7.2, 8.1, 6.5, 8.0, 7.5], 
+                        backgroundColor: '#27ae60', 
                         borderRadius: 4,
                         barPercentage: 0.6
                     }
                 ]
             },
             options: {
-                indexAxis: 'y', // Rende le barre orizzontali
+                indexAxis: 'y',
                 maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 10, // Scala fissa fino a 10 (Punteggio PIPPI)
-                        grid: { color: 'rgba(0,0,0,0.05)' }
-                    },
-                    y: {
-                        grid: { display: false }
-                    }
+                    x: { beginAtZero: true, max: 10 },
+                    y: { grid: { display: false } }
                 },
-                plugins: {
-                    legend: { position: 'bottom' }
-                }
+                plugins: { legend: { position: 'bottom' } }
             }
         });
     </script>
