@@ -80,23 +80,17 @@
             </div>
         </section>
 
+        <div class="mini-stat-strip" data-aos="fade-up" data-aos-delay="100">
+            <span class="mini-stat-label">📉 Famiglie uscite (Drop-out):</span>
+            <span class="mini-stat-value">6 su 45 (13.3%)</span>
+        </div>
+
         <div class="section-divider"></div>
 
-        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">2. I Protagonisti</h2>
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">2. Protagonisti e Bisogni</h2>
         
         <div class="grid-2-col">
             <section class="card glass-effect" data-aos="fade-right">
-                <div class="card-header">
-                    <h2>Drop-out</h2>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: center; height: 250px; flex-direction: column;">
-                    <span style="font-size: 5rem; font-weight: bold; color: #e74c3c;">6</span>
-                    <span style="font-size: 1.2rem; color: #555;">Famiglie uscite</span>
-                    <small style="margin-top: 10px;">Su un totale di 45 (13.3%)</small>
-                </div>
-            </section>
-
-            <section class="card glass-effect" data-aos="fade-left">
                 <div class="card-header">
                     <h2>Chi sono le famiglie?</h2>
                 </div>
@@ -104,50 +98,113 @@
                     <canvas id="familyTypeChart"></canvas>
                 </div>
             </section>
+
+            <section class="card glass-effect" data-aos="fade-left">
+                <div class="card-header">
+                    <h2>Fragilità Principali</h2>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="fragilityChart"></canvas>
+                </div>
+                <button id="btnFragility" class="btn-expand" onclick="toggleFragility()" style="font-size: 0.8rem; padding: 5px 15px;">Vedi tutte ▼</button>
+            </section>
         </div>
+
+        <section id="extraFragilityContainer" class="card glass-effect" style="display: none; margin-bottom: 30px;">
+             <h3 style="text-align: center; font-size: 1rem; color: #666;">Altre fragilità rilevate</h3>
+             <div class="chart-container" style="height: 300px;">
+                <canvas id="fragilitySecondaryChart"></canvas>
+            </div>
+        </section>
 
         <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
             <div class="card-header">
                 <h2>Rete Territoriale Operatori</h2>
             </div>
-            <div class="chart-container" style="height: 300px;">
+            <div class="chart-container" style="height: 250px;">
                 <canvas id="operatorsChart"></canvas>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Impatto e Fragilità</h2>
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Outcome: L'Impatto del Percorso</h2>
 
-        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
-            <div class="card-header">
-                <h2>Aree di Fragilità Emerse</h2>
-                <p>Percentuali calcolate sul totale delle famiglie che hanno concluso il percorso.</p>
-            </div>
-            
-            <div class="chart-container" style="height: 300px;">
-                <canvas id="fragilityChart"></canvas>
-            </div>
-
-            <button id="btnFragility" class="btn-expand" onclick="toggleFragility()">Vedi tutte le altre fragilità ▼</button>
-
-            <div id="extraFragilityContainer" style="display: none;">
-                <h3 style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 15px;">Altre fragilità rilevate (Incidenza minore)</h3>
-                <div class="chart-container" style="height: 400px;"> <canvas id="fragilitySecondaryChart"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <section class="card glass-effect" data-aos="zoom-in">
+        <section class="card glass-effect" data-aos="fade-up">
             <div class="card-header" style="text-align: center;">
-                <h2>Il Triangolo P.I.P.P.I. (Outcome)</h2>
-                <p>Confronto punteggi medi: <span style="color:#e74c3c">■ Inizio (Pre)</span> vs <span style="color:#27ae60">■ Fine (Post)</span></p>
+                <h2>Le Dimensioni Analizzate</h2>
+                <p>Seleziona un'area per vedere quali dimensioni specifiche sono state valutate.</p>
             </div>
             
-            <div class="chart-container-large">
-                <canvas id="pippiChart"></canvas>
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="showDimension('bambino', this)">👶 Il Mondo del Bambino</button>
+                <button class="tab-btn" onclick="showDimension('famiglia', this)">🏠 La Famiglia</button>
+                <button class="tab-btn" onclick="showDimension('ambiente', this)">🌍 L'Ambiente</button>
+            </div>
+
+            <div id="dim-bambino" class="dimension-box show">
+                <ul class="dimension-list">
+                    <li>Salute e crescita</li>
+                    <li>Emozioni, pensieri, comportamenti</li>
+                    <li>Identità e autostima</li>
+                    <li>Autonomia</li>
+                    <li>Relazioni familiari e sociali</li>
+                    <li>Apprendimento</li>
+                    <li>Gioco e tempo libero</li>
+                </ul>
+            </div>
+
+            <div id="dim-famiglia" class="dimension-box">
+                <ul class="dimension-list">
+                    <li>Cura di base, sicurezza e protezione</li>
+                    <li>Calore, affetto e stabilità emotiva</li>
+                    <li>Guida, regole e valori</li>
+                    <li>Divertimento, stimoli e incoraggiamento</li>
+                    <li>Autorealizzazione delle figure genitoriali</li>
+                </ul>
+            </div>
+
+            <div id="dim-ambiente" class="dimension-box">
+                <ul class="dimension-list">
+                    <li>Relazioni e sostegno sociale</li>
+                    <li>Lavoro e situazione economica</li>
+                    <li>Rapporto con scuola e risorse educative</li>
+                    <li>Partecipazione e inclusione sociale</li>
+                    <li>Abitazione</li>
+                </ul>
             </div>
         </section>
+
+        <div class="grid-2-col" style="margin-top: 30px;">
+            
+            <section class="card glass-effect" data-aos="fade-right">
+                <div class="card-header">
+                    <h3 style="color: #c0392b;">📉 Riduzione Fattori di Rischio</h3>
+                    <p style="font-size: 0.85rem;">Punteggio medio (1-5). <br><strong>Più basso è, meglio è.</strong></p>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card glass-effect" data-aos="fade-left">
+                <div class="card-header">
+                    <h3 style="color: #27ae60;">📈 Aumento Fattori di Protezione</h3>
+                    <p style="font-size: 0.85rem;">Punteggio medio (1-5). <br><strong>Più alto è, meglio è.</strong></p>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="protectionChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <div class="service-relation-card" data-aos="zoom-in">
+            <h3 style="margin: 0 0 10px 0; color: #2ecc71;">🤝 Qualità della relazione con i servizi</h3>
+            <p>Grazie alla co-costruzione, la percezione della qualità della relazione è migliorata notevolmente.</p>
+            <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">
+                <span style="color: #95a5a6;">3.97</span> ➔ <span style="color: #27ae60;">4.52</span>
+            </div>
+        </div>
 
     </main>
 
@@ -163,145 +220,138 @@
         Chart.defaults.font.family = "'Quicksand', sans-serif";
         Chart.defaults.font.size = 13;
 
-        // --- FUNZIONE PER MOSTRARE/NASCONDERE FRAGILITÀ ---
+        // --- GESTIONE TAB DIMENSIONI ---
+        function showDimension(type, btn) {
+            // Nascondi tutti i box
+            document.querySelectorAll('.dimension-box').forEach(el => el.classList.remove('show', 'display-block'));
+            document.querySelectorAll('.dimension-box').forEach(el => el.style.display = 'none');
+            
+            // Togli active dai bottoni
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+            // Mostra quello giusto
+            document.getElementById('dim-' + type).style.display = 'block';
+            setTimeout(() => document.getElementById('dim-' + type).classList.add('show'), 10);
+            
+            // Attiva bottone
+            btn.classList.add('active');
+        }
+
+        // --- GESTIONE FRAGILITÀ (Espandi) ---
         function toggleFragility() {
             var x = document.getElementById("extraFragilityContainer");
             var btn = document.getElementById("btnFragility");
             if (x.style.display === "none") {
                 x.style.display = "block";
-                btn.innerHTML = "Nascondi dettagli ▲";
+                btn.innerHTML = "Nascondi ▲";
             } else {
                 x.style.display = "none";
-                btn.innerHTML = "Vedi tutte le altre fragilità ▼";
+                btn.innerHTML = "Vedi tutte ▼";
             }
         }
 
-        // 1. FAMIGLIE (Ciambella - DATI FITTIZI IN ATTESA)
-        new Chart(document.getElementById('familyTypeChart'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Monogenitoriali', 'Nucleo completo', 'Famiglie ricostituite', 'Con affido'],
-                datasets: [{
-                    data: [15, 45, 10, 5],
-                    backgroundColor: ['#3498db', '#2ecc71', '#f1c40f', '#9b59b6'],
-                    borderWidth: 0
-                }]
-            },
-            options: { 
-                plugins: { 
-                    legend: { position: 'bottom', labels: { padding: 20 } } 
-                },
-                maintainAspectRatio: false
-            }
-        });
+        // --- GRAFICI OUTCOME (DATI REALI) ---
 
-        // 2. OPERATORI (DATI FITTIZI IN ATTESA)
-        new Chart(document.getElementById('operatorsChart'), {
+        // 1. FATTORI DI RISCHIO (Diminuzione = Bene)
+        new Chart(document.getElementById('riskChart'), {
             type: 'bar',
             data: {
-                labels: ['Servizi Sociali Comune', 'Consultorio Familiare', 'NPI', 'Terzo Settore', 'Scuola'],
-                datasets: [{
-                    label: 'Numero Operatori',
-                    data: [12, 8, 5, 10, 3],
-                    backgroundColor: '#34495e',
-                    borderRadius: 4
-                }]
-            },
-            options: { 
-                indexAxis: 'y', 
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } }
-            }
-        });
-
-        // 3a. FRAGILITA PRINCIPALI (Verticali - Dati Reali)
-        new Chart(document.getElementById('fragilityChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Economica', 'Eventi Traumatici', 'Abitativa', 'Assenza Genitori', 'Disagio Psic. Bambino', 'Isolamento Sociale'],
-                datasets: [{
-                    label: '% Famiglie',
-                    data: [51, 46, 42, 40, 40, 37],
-                    backgroundColor: [
-                        '#c0392b', '#c0392b', '#e74c3c', '#e74c3c', '#e74c3c', '#e74c3c'
-                    ],
-                    borderRadius: 5
-                }]
-            },
-            options: { 
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { beginAtZero: true, max: 60 } // Max un po' più alto del 51% per estetica
-                }
-            }
-        });
-
-        // 3b. FRAGILITA SECONDARIE (Orizzontali - Dati Reali)
-        new Chart(document.getElementById('fragilitySecondaryChart'), {
-            type: 'bar',
-            data: {
-                labels: [
-                    'Disagio Psic. Famiglia', 'Bassa Scolarizzazione', 'Migrazione', 
-                    'Incuria/Negligenza', 'Disabilità Bambino', 'Conflittualità Coppia', 
-                    'Maltrattamento', 'Transgenerazionale', 'Altro'
-                ],
-                datasets: [{
-                    label: '% Famiglie',
-                    data: [34, 31, 23, 20, 20, 20, 11, 11, 9],
-                    backgroundColor: '#3498db', // Blu per differenziare
-                    borderRadius: 4,
-                    barPercentage: 0.6
-                }]
-            },
-            options: { 
-                indexAxis: 'y', // Orizzontale
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { beginAtZero: true, max: 40 }
-                }
-            }
-        });
-
-        // 4. TRIANGOLO PIPPI (Confronto - DATI FITTIZI IN ATTESA)
-        new Chart(document.getElementById('pippiChart'), {
-            type: 'bar',
-            data: {
-                labels: [
-                    'Risposta ai bisogni di sviluppo', 
-                    'Relazioni familiari', 
-                    'Relazioni sociali', 
-                    'Salute e Sicurezza', 
-                    'Scuola e Apprendimento'
-                ],
+                labels: ['Bambino', 'Famiglia', 'Ambiente'],
                 datasets: [
                     {
-                        label: 'Inizio Percorso',
-                        data: [3.5, 4.0, 2.5, 5.0, 3.2], 
-                        backgroundColor: '#e74c3c', 
-                        borderRadius: 4,
-                        barPercentage: 0.6
+                        label: 'Pre (Inizio)',
+                        data: [3.23, 3.80, 3.17],
+                        backgroundColor: 'rgba(231, 76, 60, 0.4)', // Rosso Chiaro
+                        borderColor: '#c0392b',
+                        borderWidth: 1
                     },
                     {
-                        label: 'Fine Percorso',
-                        data: [7.2, 8.1, 6.5, 8.0, 7.5], 
-                        backgroundColor: '#27ae60', 
-                        borderRadius: 4,
-                        barPercentage: 0.6
+                        label: 'Post (Fine)',
+                        data: [2.73, 2.79, 2.67],
+                        backgroundColor: '#c0392b', // Rosso Scuro (Risultato)
+                        borderColor: '#922b21',
+                        borderWidth: 1
                     }
                 ]
             },
             options: {
-                indexAxis: 'y',
-                maintainAspectRatio: false,
                 scales: {
-                    x: { beginAtZero: true, max: 10 },
-                    y: { grid: { display: false } }
+                    y: { beginAtZero: false, min: 1, max: 5, title: {display: true, text: 'Scala 1-5'} }
                 },
                 plugins: { legend: { position: 'bottom' } }
             }
         });
+
+        // 2. FATTORI DI PROTEZIONE (Aumento = Bene)
+        new Chart(document.getElementById('protectionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Bambino', 'Famiglia', 'Ambiente'],
+                datasets: [
+                    {
+                        label: 'Pre (Inizio)',
+                        data: [2.97, 2.91, 3.11],
+                        backgroundColor: 'rgba(46, 204, 113, 0.4)', // Verde Chiaro
+                        borderColor: '#27ae60',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Post (Fine)',
+                        data: [3.94, 3.58, 3.88],
+                        backgroundColor: '#27ae60', // Verde Scuro (Risultato)
+                        borderColor: '#1e8449',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: false, min: 1, max: 5, title: {display: true, text: 'Scala 1-5'} }
+                },
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+
+        // --- ALTRI GRAFICI (Fragilità ecc.) ---
+
+        new Chart(document.getElementById('fragilityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Economica', 'Eventi Traumatici', 'Abitativa', 'Assenza Genitori', 'Disagio Psic. Bambino', 'Isolamento'],
+                datasets: [{
+                    data: [51, 46, 42, 40, 40, 37],
+                    backgroundColor: '#e74c3c',
+                    borderRadius: 4
+                }]
+            },
+            options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        new Chart(document.getElementById('fragilitySecondaryChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Disagio Psic. Famiglia', 'Bassa Scolar.', 'Migrazione', 'Incuria', 'Disabilità', 'Conflitti', 'Maltrattamento', 'Transgen.', 'Altro'],
+                datasets: [{
+                    data: [34, 31, 23, 20, 20, 20, 11, 11, 9],
+                    backgroundColor: '#3498db',
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+        
+        // Placeholder Famiglie e Operatori (da riempire coi dati reali quando li hai)
+        new Chart(document.getElementById('familyTypeChart'), {
+            type: 'doughnut',
+            data: { labels: ['Tipo A', 'Tipo B'], datasets: [{ data: [50, 50], backgroundColor: ['#ddd', '#eee'] }] },
+            options: { maintainAspectRatio: false }
+        });
+        new Chart(document.getElementById('operatorsChart'), {
+            type: 'bar',
+            data: { labels: ['Ente A', 'Ente B'], datasets: [{ data: [10, 5], backgroundColor: '#34495e' }] },
+            options: { indexAxis: 'y', maintainAspectRatio: false }
+        });
+
     </script>
 
 </body>
