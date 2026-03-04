@@ -1,3 +1,11 @@
+/* --- IMPORTAZIONE FONT PERSONALIZZATO --- */
+@font-face {
+    font-family: 'Crufle';
+    src: url('fonts/Crufle.otf') format('opentype'); /* Se hai caricato il file .ttf, scrivi Crufle.ttf e format('truetype') */
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -6,11 +14,20 @@
 }
 
 body {
-    font-family: 'Quicksand', sans-serif; /* Font più amichevole */
-    color: #4a4a4a; /* Grigio scuro morbido, non nero assoluto */
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
+    /* Cambiamo il font in Calibri, con alternative di sicurezza */
+    font-family: 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Applichiamo Crufle a tutti i titoli e forziamo il MAIUSCOLO */
+h1, h2, h3, h4, h5, h6, .timeline-title {
+    font-family: 'Crufle', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase; /* <-- Questa è la riga che fa la magia! */
+    letter-spacing: 1px; /* Opzionale: aggiunge un filo di spazio tra le lettere per maggiore leggibilità */
 }
 
 /* SFONDO ARTISTICO FISSO */
@@ -207,9 +224,9 @@ footer {
 /* La linea di connessione */
 .timeline-line {
     position: absolute;
-    background-color: rgba(52, 152, 219, 0.3);
+    /* Usiamo il tuo arancione ma semitrasparente per la linea di fondo */
+    background-color: rgba(239, 125, 7, 0.3); 
     z-index: 0;
-    /* Default Desktop: Orizzontale */
     top: 55px; 
     left: 10%;
     width: 80%;
@@ -227,11 +244,17 @@ footer {
 .timeline-dot {
     width: 30px;
     height: 30px;
-    background-color: #3498db;
+    background-color: #ef7d07; /* Colore aziendale */
     border: 4px solid #fff;
     border-radius: 50%;
     margin: 0 auto 20px auto;
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    /* Ombra colorata col tuo arancione */
+    box-shadow: 0 0 10px rgba(239, 125, 7, 0.5); 
+}
+
+.timeline-step:hover .timeline-dot {
+    /* Una versione leggermente più scura per l'effetto hover (passaggio del mouse) */
+    background-color: #d66b05; 
 }
 
 .timeline-content {
@@ -251,7 +274,7 @@ footer {
 }
 
 .timeline-title {
-    color: #e67e22; 
+    color: #ef7d07; /* Colore aziendale */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -303,22 +326,20 @@ footer {
 }
 
 /* --- AGGIUNTE PER LE FRAGILITÀ --- */
-.btn-expand {
-    background: transparent;
-    border: 2px solid #3498db;
-    color: #3498db;
-    padding: 10px 20px;
+.btn-expand, .tab-btn {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #ef7d07; /* Bordo aziendale */
+    color: #ef7d07; /* Testo aziendale */
+    padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Calibri', sans-serif; /* Usiamo il font corretto qui */
     font-weight: 600;
-    margin: 20px auto 0 auto; /* Centrato */
-    display: block;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
-.btn-expand:hover {
-    background: #3498db;
+.btn-expand:hover, .tab-btn.active, .tab-btn:hover {
+    background: #ef7d07; /* Sfondo pieno aziendale al passaggio del mouse */
     color: white;
 }
 
@@ -386,12 +407,12 @@ footer {
 
 /* Box dove appare la lista delle dimensioni */
 .dimension-box {
-    background: rgba(240, 248, 255, 0.7); /* Azzurrino chiaro */
-    border-left: 4px solid #3498db;
+    background: rgba(239, 125, 7, 0.05); /* Sfondo arancione chiarissimo */
+    border-left: 4px solid #ef7d07; /* Bordo sinistro aziendale */
     padding: 20px;
     border-radius: 0 5px 5px 0;
     margin-top: 10px;
-    display: none; /* Nascosto di default */
+    display: none; 
 }
 
 .dimension-box.show {
@@ -416,7 +437,7 @@ footer {
 
 .dimension-list li::before {
     content: "•";
-    color: #3498db;
+    color: #ef7d07; /* Pallini della lista aziendali */
     font-weight: bold;
     position: absolute;
     left: 0;
