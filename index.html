@@ -314,30 +314,67 @@
 
         // --- ALTRI GRAFICI (Fragilità ecc.) ---
 
+// --- GRAFICI FRAGILITÀ AGGIORNATI ---
+
+        // 3a. FRAGILITA PRINCIPALI (Le prime 8 - Verticali)
         new Chart(document.getElementById('fragilityChart'), {
             type: 'bar',
             data: {
-                labels: ['Economica', 'Eventi Traumatici', 'Abitativa', 'Assenza Genitori', 'Disagio Psic. Bambino', 'Isolamento'],
+                labels: [
+                    'Economica', 
+                    'Eventi Traumatici', 
+                    'Abitativa', 
+                    'Assenza Genitori', 
+                    'Disagio Psic. Bambino', 
+                    'Isolamento Sociale', 
+                    'Disagio Psic. Famiglia', 
+                    'Bassa Scolarizzazione'
+                ],
                 datasets: [{
-                    data: [51, 46, 42, 40, 40, 37],
-                    backgroundColor: '#e74c3c',
-                    borderRadius: 4
+                    label: '% Famiglie',
+                    data: [51, 46, 42, 40, 40, 37, 34, 31],
+                    backgroundColor: '#e74c3c', // Rosso per tutte le barre
+                    borderRadius: 5
                 }]
             },
-            options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            options: { 
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 60 } 
+                }
+            }
         });
 
+        // 3b. FRAGILITA SECONDARIE (Le rimanenti - Orizzontali)
         new Chart(document.getElementById('fragilitySecondaryChart'), {
             type: 'bar',
             data: {
-                labels: ['Disagio Psic. Famiglia', 'Bassa Scolar.', 'Migrazione', 'Incuria', 'Disabilità', 'Conflitti', 'Maltrattamento', 'Transgen.', 'Altro'],
+                labels: [
+                    'Migrazione', 
+                    'Incuria/Negligenza', 
+                    'Disabilità Bambino', 
+                    'Conflittualità Coppia', 
+                    'Maltrattamento', 
+                    'Transgenerazionale', 
+                    'Altro'
+                ],
                 datasets: [{
-                    data: [34, 31, 23, 20, 20, 20, 11, 11, 9],
-                    backgroundColor: '#3498db',
-                    borderRadius: 4
+                    label: '% Famiglie',
+                    data: [23, 20, 20, 20, 11, 11, 9],
+                    backgroundColor: '#3498db', // Blu
+                    borderRadius: 4,
+                    barPercentage: 0.6
                 }]
             },
-            options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            options: { 
+                indexAxis: 'y', // Rende il grafico orizzontale
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, max: 30 } // Abbassato il max a 30 per proporzionare le barre
+                }
+            }
         });
         
         // Placeholder Famiglie e Operatori (da riempire coi dati reali quando li hai)
