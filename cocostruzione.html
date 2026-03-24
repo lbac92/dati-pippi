@@ -3,55 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P.I.P.P.I. - Co-costruzione</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>La Co-Costruzione - P.I.P.P.I.</title>
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <div class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
-        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
-        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
-        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
-        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
-        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
+            <li><a href="cocostruzione.html" onclick="toggleMenu()" style="color: #ef7d07;">2. Co-Costruzione</a></li>
+            <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
+            <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
+            <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+        </ul>
     </div>
-    
+
     <div class="background-art"></div>
 
-    <nav style="padding: 20px; text-align: center;">
-        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Home</a>
-    </nav>
-
-    <header class="hero" style="height: 40vh;">
+    <header class="hero">
         <div class="hero-content" data-aos="fade-down">
-            <h1>Co-costruire il Progetto</h1>
-            <p>Non valutare <i>la</i> famiglia, ma valutare <i>con</i> la famiglia.</p>
+            <h1>La Co-Costruzione</h1>
+            <p>Il viaggio condiviso tra famiglia, operatori e rete territoriale.</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="card glass-effect" data-aos="fade-up">
-            <h2>Il Mondo del Bambino</h2>
-            <p class="description">
-                Attraverso il confronto, analizziamo insieme i punti di forza e le aree di miglioramento 
-                nelle diverse dimensioni della vita del bambino.
+
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;" data-aos="fade-up">
+            <h2 style="color: #2c3e50;">Il Processo di Accompagnamento</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
+                Questa pagina illustra il percorso metodologico del programma P.I.P.P.I. 
+                Non si tratta di interventi isolati, ma di un <strong>processo a tappe</strong> progettato per accompagnare la famiglia 
+                dall'analisi iniziale dei bisogni fino alla valutazione finale dei risultati ottenuti.
             </p>
-            <div class="chart-container" style="height: 400px;"> <canvas id="graficoCocostruzione"></canvas>
+        </div>
+
+        <section class="info-box-timeline glass-effect" data-aos="zoom-in">
+            <h2 style="color: #ef7d07; margin-top: 0; text-align: center;">L'Orizzonte Temporale: 18 Mesi</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                Il programma si articola su un arco temporale definito, strutturato per dare il tempo necessario al cambiamento. 
+                Ad ogni <em>Tempo (T)</em> è previsto un momento formale in cui l'equipe e la famiglia fanno il punto della situazione e aggiornano i dati.
+            </p>
+            
+            <div class="timeline-grid-3">
+                <div class="time-card">
+                    <h3>T0</h3>
+                    <strong>Inizio Programma</strong>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">Fase di partenza, valutazione iniziale e avvio della presa in carico.</p>
+                </div>
+                <div class="time-card">
+                    <h3>T1</h3>
+                    <strong>Metà Programma</strong>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">Momento di monitoraggio formale per calibrare le azioni in corso.</p>
+                </div>
+                <div class="time-card">
+                    <h3>T2</h3>
+                    <strong>Fine Programma</strong>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">Chiusura dei 18 mesi e valutazione complessiva degli <em>outcome</em>.</p>
+                </div>
             </div>
         </section>
+
+        <div class="section-divider"></div>
+
+        <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;" data-aos="fade-up">Le Fasi della Co-Costruzione</h2>
+
+        <div class="journey-container">
+            
+            <div class="journey-step left" data-aos="fade-right">
+                <div class="journey-content">
+                    <span class="step-number">Fase 1</span>
+                    <h3>Il Pre-Assessment</h3>
+                    <p>In questa fase iniziale, l'equipe già attiva (o il singolo operatore referente) si riunisce per compilare una scheda preliminare. L'obiettivo è individuare a grandi linee le fragilità e le risorse del nucleo, per valutare se il Programma P.I.P.P.I. sia lo strumento più adeguato per i bisogni specifici di questa famiglia.</p>
+                </div>
+            </div>
+
+            <div class="journey-step right" data-aos="fade-left">
+                <div class="journey-content">
+                    <span class="step-number">Fase 2</span>
+                    <h3>Incontro e Consenso Informato</h3>
+                    <p>Si organizza un momento di incontro diretto con la famiglia. Viene presentato il percorso, spiegando chiaramente le modalità e gli obiettivi. Si evidenzia che <strong>P.I.P.P.I. è un programma ad adesione volontaria</strong>: la firma del consenso informato sancisce l'inizio ufficiale dell'alleanza tra famiglia e servizi.</p>
+                </div>
+            </div>
+
+            <div class="journey-step left" data-aos="fade-right">
+                <div class="journey-content">
+                    <span class="step-number">Fase 3</span>
+                    <h3>L'Assessment Multidisciplinare</h3>
+                    <p>È il cuore della valutazione. Viene svolto con la famiglia e l'equipe multidisciplinare al completo. Utilizzando lo strumento de <em>Il Mondo del Bambino</em> (il Triangolo), si esplorano nel dettaglio le varie aree di vita. Questa fase permette di definire in modo condiviso qual è lo spazio di lavoro possibile e quali risorse attivare.</p>
+                </div>
+            </div>
+
+            <div class="journey-step right" data-aos="fade-left">
+                <div class="journey-content">
+                    <span class="step-number">Fase 4</span>
+                    <h3>Le Microprogettazioni</h3>
+                    <p>Sulla base dell'Assessment, si sviluppano le microprogettazioni. Si tratta di piani d'azione estremamente specifici, chiari e definiti. Non si lasciano zone d'ombra: in questa fase vengono stabiliti in modo preciso <strong>i tempi, i modi e i ruoli</strong> di ciascun attore (famiglia compresa) per raggiungere piccoli obiettivi concreti.</p>
+                </div>
+            </div>
+
+            <div class="journey-step left" data-aos="fade-right">
+                <div class="journey-content">
+                    <span class="step-number">Fase 5</span>
+                    <h3>Attivazione dei Dispositivi</h3>
+                    <p>Le microprogettazioni prendono vita attraverso l'attivazione dei dispositivi pratici del programma (es. educativa domiciliare, gruppi genitori, supporto scolastico, ecc.).<br><br><small><em>(I dispositivi verranno approfonditi nel dettaglio nella sezione dedicata del sito).</em></small></p>
+                </div>
+            </div>
+
+            <div class="journey-step right" data-aos="fade-left">
+                <div class="journey-content">
+                    <span class="step-number">Fase 6</span>
+                    <h3>Il Post-Assessment</h3>
+                    <p>Al termine del percorso, si compila la valutazione finale. Il Post-Assessment è speculare a quello iniziale e permette, a colpo d'occhio, di valutare le differenze con il Pre-Assessment, misurando in modo oggettivo l'impatto dell'intervento sul benessere del bambino e sulle competenze genitoriali.</p>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
-    <footer><p>Stanza 2 - Progettazione Condivisa</p></footer>
+    <footer>
+        <p>Progetto P.I.P.P.I. - Report Triennale</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script-cocostruzione.js"></script>
+    <script src="script.js"></script> 
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>

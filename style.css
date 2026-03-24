@@ -338,8 +338,8 @@ footer {
     transition: all 0.3s;
 }
 
-.btn-expand:hover, .tab-btn.active, .tab-btn:hover {
-    background: #ef7d07; /* Sfondo pieno aziendale al passaggio del mouse */
+.btn-expand:hover {
+    background: #ef7d07;
     color: white;
 }
 
@@ -428,10 +428,11 @@ footer {
 }
 
 .dimension-list li {
-    margin-bottom: 8px;
+    margin-bottom: 12px; /* Aumentato da 8px a 12px */
+    line-height: 1.6;    /* Aggiunto per dare più spazio tra le righe di testo lungo */
     padding-left: 20px;
     position: relative;
-    font-size: 0.9rem;
+    font-size: 0.95rem;  /* Leggermente più grande */
     color: #34495e;
 }
 
@@ -461,4 +462,191 @@ footer {
 /* Responsive per le colonne della lista */
 @media (max-width: 600px) {
     .dimension-list { columns: 1; }
+}
+
+.operator-category {
+    margin-bottom: 20px;
+}
+
+.operator-category h4 {
+    color: #ef7d07;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(239, 125, 7, 0.3);
+    padding-bottom: 5px;
+}
+
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.badge strong {
+    color: #ef7d07;
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+/* --- COLORI SPECIFICI TAB DIMENSIONI --- */
+.tab-bambino { border-color: #3498db; color: #3498db; }
+.tab-bambino:hover, .tab-bambino.active { background: #3498db; color: white; }
+
+.tab-famiglia { border-color: #e84393; color: #e84393; } /* Fucsia */
+.tab-famiglia:hover, .tab-famiglia.active { background: #e84393; color: white; }
+
+.tab-ambiente { border-color: #27ae60; color: #27ae60; } /* Verde */
+.tab-ambiente:hover, .tab-ambiente.active { background: #27ae60; color: white; }
+
+/* Adattiamo anche il colore dei box e dei pallini in base alla sezione */
+#dim-bambino { border-left-color: #3498db; background: rgba(52, 152, 219, 0.05); }
+#dim-bambino .dimension-list li::before { color: #3498db; }
+
+#dim-famiglia { border-left-color: #e84393; background: rgba(232, 67, 147, 0.05); }
+#dim-famiglia .dimension-list li::before { color: #e84393; }
+
+#dim-ambiente { border-left-color: #27ae60; background: rgba(39, 174, 96, 0.05); }
+#dim-ambiente .dimension-list li::before { color: #27ae60; }
+
+/* --- STILE PER IL PROCESSO DI CO-COSTRUZIONE (Vertical Journey) --- */
+
+/* Box Informativo Generale (18 mesi) */
+.info-box-timeline {
+    background: linear-gradient(135deg, rgba(239, 125, 7, 0.1), rgba(255, 255, 255, 0.8));
+    border-left: 5px solid #ef7d07;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.timeline-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.time-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(239, 125, 7, 0.2);
+}
+
+.time-card h3 {
+    color: #ef7d07;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* La linea a zig-zag del processo */
+.journey-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Linea centrale dritta */
+.journey-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: rgba(239, 125, 7, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.journey-step {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Posizionamento a sinistra e destra */
+.journey-step.left { left: 0; }
+.journey-step.right { left: 50%; }
+
+/* Il pallino sui nodi */
+.journey-step::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px;
+    background-color: white;
+    border: 4px solid #ef7d07;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(239, 125, 7, 0.4);
+}
+
+.journey-step.right::after {
+    left: -12px;
+}
+
+/* Il contenuto dello step */
+.journey-content {
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(239, 125, 7, 0.2);
+    transition: transform 0.3s;
+}
+
+.journey-content:hover {
+    transform: translateY(-5px);
+    border-color: #ef7d07;
+}
+
+.step-number {
+    display: inline-block;
+    background: #ef7d07;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.journey-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+/* RESPONSIVE PER CELLULARI */
+@media screen and (max-width: 768px) {
+    .journey-container::after { left: 31px; }
+    
+    .journey-step {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 10px;
+    }
+    
+    .journey-step.right { left: 0; }
+    
+    .journey-step.left::after, .journey-step.right::after {
+        left: 19px;
+    }
 }

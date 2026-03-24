@@ -7,7 +7,6 @@
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -60,7 +59,7 @@
                         <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
                         <p><strong>22</strong> Famiglie (Livello Avanzato)</p>
                         <p><strong>2</strong> Coach | <strong>3</strong> Formatori</p>
-                        <p style="color: #e67e22; font-weight: 600; margin-top:5px;">★ Attivazione Dispositivo Sostegno Genitorialità</p>
+                        <p style="color: #ef7d07; font-weight: 600; margin-top:5px;">★ Attivazione Dispositivo Sostegno Genitorialità</p>
                     </div>
                 </div>
 
@@ -73,7 +72,7 @@
                         <p><strong>13</strong> Famiglie (Livello Avanzato)</p>
                         <p><strong>2</strong> Coach | <strong>3</strong> Formatori</p>
                         <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">Dispositivo Sostegno Genitorialità</p>
-                        <p style="color: #e67e22; font-weight: 600;">★ Gruppo di Lavoro Permanente</p>
+                        <p style="color: #ef7d07; font-weight: 600;">★ Gruppo di Lavoro Permanente</p>
                     </div>
                 </div>
             </div>
@@ -88,40 +87,56 @@
 
         <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">2. Protagonisti e Bisogni</h2>
         
-        <div class="grid-2-col">
-            <section class="card glass-effect" data-aos="fade-right">
-                <div class="card-header">
-                    <h2>Chi sono le famiglie?</h2>
-                </div>
-                <div class="chart-container" style="height: 250px;">
-                    <canvas id="familyTypeChart"></canvas>
-                </div>
-            </section>
+        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
+            <div class="card-header">
+                <h2>Aree di Fragilità Emerse</h2>
+                <p>Percentuali calcolate sul totale delle famiglie che hanno concluso il percorso.</p>
+            </div>
+            <div class="chart-container" style="height: 350px;">
+                <canvas id="fragilityChart"></canvas>
+            </div>
+            <button id="btnFragility" class="btn-expand" onclick="toggleFragility()" style="margin-top: 15px;">Vedi le altre fragilità minori ▼</button>
+        </section>
 
-            <section class="card glass-effect" data-aos="fade-left">
-                <div class="card-header">
-                    <h2>Fragilità Principali</h2>
-                </div>
-                <div class="chart-container" style="height: 250px;">
-                    <canvas id="fragilityChart"></canvas>
-                </div>
-                <button id="btnFragility" class="btn-expand" onclick="toggleFragility()" style="font-size: 0.8rem; padding: 5px 15px;">Vedi tutte ▼</button>
-            </section>
-        </div>
-
-        <section id="extraFragilityContainer" class="card glass-effect" style="display: none; margin-bottom: 30px;">
-             <h3 style="text-align: center; font-size: 1rem; color: #666;">Altre fragilità rilevate</h3>
-             <div class="chart-container" style="height: 300px;">
+        <section id="extraFragilityContainer" class="card glass-effect" style="display: none; margin-bottom: 40px;">
+             <h3 style="text-align: center; font-size: 1rem; color: #666;">Altre fragilità rilevate (Incidenza minore)</h3>
+             <div class="chart-container" style="height: 250px;">
                 <canvas id="fragilitySecondaryChart"></canvas>
             </div>
         </section>
 
         <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
             <div class="card-header">
-                <h2>Rete Territoriale Operatori</h2>
+                <h2>La Rete Territoriale (Gli Operatori)</h2>
+                <p>Presenze complessive nelle tre edizioni del programma.</p>
             </div>
-            <div class="chart-container" style="height: 250px;">
+            <div class="chart-container" style="height: 350px;">
                 <canvas id="operatorsChart"></canvas>
+            </div>
+            
+            <button id="btnOperators" class="btn-expand" onclick="toggleOperators()" style="margin-top: 30px; margin-bottom: 25px;">Vedi dettagli Enti di provenienza ▼</button>
+            
+            <div id="operatorDetails" class="operator-details-container" style="display: none; padding-top: 25px;">
+                <div class="operator-category">
+                    <h4>Assistenti Sociali (Totale: 31)</h4>
+                    <div class="badge-list">
+                        <div class="badge"><strong>21</strong> Comune</div>
+                        <div class="badge"><strong>6</strong> Tutela Minori</div>
+                        <div class="badge"><strong>2</strong> NPI</div>
+                        <div class="badge"><strong>1</strong> NOA</div>
+                        <div class="badge"><strong>1</strong> SerD</div>
+                    </div>
+                </div>
+                <div class="operator-category">
+                    <h4>Psicologi (Totale: 24)</h4>
+                    <div class="badge-list">
+                        <div class="badge"><strong>15</strong> ASST (NPI / Consultorio)</div>
+                        <div class="badge"><strong>4</strong> Tutela Minori</div>
+                        <div class="badge"><strong>3</strong> Privato</div>
+                        <div class="badge"><strong>1</strong> Transculturale</div>
+                        <div class="badge"><strong>1</strong> SerD</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -130,21 +145,21 @@
         <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">3. Outcome: L'Impatto del Percorso</h2>
 
         <section class="card glass-effect" data-aos="fade-up">
-            <div class="card-header" style="text-align: center;">
+            <div class="card-header" style="text-align: center; margin-bottom: 30px;">
                 <h2>Le Dimensioni Analizzate</h2>
                 <p>Seleziona un'area per vedere quali dimensioni specifiche sono state valutate.</p>
             </div>
             
             <div class="tabs-container">
-                <button class="tab-btn active" onclick="showDimension('bambino', this)">👶 Il Mondo del Bambino</button>
-                <button class="tab-btn" onclick="showDimension('famiglia', this)">🏠 La Famiglia</button>
-                <button class="tab-btn" onclick="showDimension('ambiente', this)">🌍 L'Ambiente</button>
+                <button class="tab-btn tab-bambino active" onclick="showDimension('bambino', this)">Bambino</button>
+                <button class="tab-btn tab-famiglia" onclick="showDimension('famiglia', this)">Famiglia</button>
+                <button class="tab-btn tab-ambiente" onclick="showDimension('ambiente', this)">Ambiente</button>
             </div>
 
             <div id="dim-bambino" class="dimension-box show">
                 <ul class="dimension-list">
                     <li>Salute e crescita</li>
-                    <li>Emozioni, pensieri, comportamenti</li>
+                    <li>Emozioni, pensieri, comunicazione e comportamenti</li>
                     <li>Identità e autostima</li>
                     <li>Autonomia</li>
                     <li>Relazioni familiari e sociali</li>
@@ -167,15 +182,14 @@
                 <ul class="dimension-list">
                     <li>Relazioni e sostegno sociale</li>
                     <li>Lavoro e situazione economica</li>
-                    <li>Rapporto con scuola e risorse educative</li>
-                    <li>Partecipazione e inclusione sociale</li>
+                    <li>Rapporto con la scuola e le altre risorse educative</li>
+                    <li>Partecipazione ed inclusione nella vita di comunità</li>
                     <li>Abitazione</li>
                 </ul>
             </div>
         </section>
 
         <div class="grid-2-col" style="margin-top: 30px;">
-            
             <section class="card glass-effect" data-aos="fade-right">
                 <div class="card-header">
                     <h3 style="color: #c0392b;">📉 Riduzione Fattori di Rischio</h3>
@@ -198,7 +212,7 @@
         </div>
 
         <div class="service-relation-card" data-aos="zoom-in">
-            <h3 style="margin: 0 0 10px 0; color: #2ecc71;">🤝 Qualità della relazione con i servizi</h3>
+            <h3 style="margin: 0 0 10px 0; color: #2ecc71;">Qualità della relazione con i servizi</h3>
             <p>Grazie alla co-costruzione, la percezione della qualità della relazione è migliorata notevolmente.</p>
             <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">
                 <span style="color: #95a5a6;">3.97</span> ➔ <span style="color: #27ae60;">4.52</span>
@@ -217,26 +231,19 @@
     <script>
         AOS.init();
         Chart.defaults.font.family = "'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif";
-        Chart.defaults.font.size = 13;
+        Chart.defaults.font.size = 14;
 
         // --- GESTIONE TAB DIMENSIONI ---
         function showDimension(type, btn) {
-            // Nascondi tutti i box
             document.querySelectorAll('.dimension-box').forEach(el => el.classList.remove('show', 'display-block'));
             document.querySelectorAll('.dimension-box').forEach(el => el.style.display = 'none');
-            
-            // Togli active dai bottoni
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
-            // Mostra quello giusto
             document.getElementById('dim-' + type).style.display = 'block';
             setTimeout(() => document.getElementById('dim-' + type).classList.add('show'), 10);
-            
-            // Attiva bottone
             btn.classList.add('active');
         }
 
-        // --- GESTIONE FRAGILITÀ (Espandi) ---
+        // --- GESTIONE ESPANSIONI ---
         function toggleFragility() {
             var x = document.getElementById("extraFragilityContainer");
             var btn = document.getElementById("btnFragility");
@@ -245,94 +252,36 @@
                 btn.innerHTML = "Nascondi ▲";
             } else {
                 x.style.display = "none";
-                btn.innerHTML = "Vedi tutte ▼";
+                btn.innerHTML = "Vedi le altre fragilità minori ▼";
             }
         }
 
-        // --- GRAFICI OUTCOME (DATI REALI) ---
-
-        // 1. FATTORI DI RISCHIO (Diminuzione = Bene)
-        new Chart(document.getElementById('riskChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Bambino', 'Famiglia', 'Ambiente'],
-                datasets: [
-                    {
-                        label: 'Pre (Inizio)',
-                        data: [3.23, 3.80, 3.17],
-                        backgroundColor: 'rgba(231, 76, 60, 0.4)', // Rosso Chiaro
-                        borderColor: '#c0392b',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Post (Fine)',
-                        data: [2.73, 2.79, 2.67],
-                        backgroundColor: '#c0392b', // Rosso Scuro (Risultato)
-                        borderColor: '#922b21',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: false, min: 1, max: 5, title: {display: true, text: 'Scala 1-5'} }
-                },
-                plugins: { legend: { position: 'bottom' } }
+        function toggleOperators() {
+            var x = document.getElementById("operatorDetails");
+            var btn = document.getElementById("btnOperators");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                btn.innerHTML = "Nascondi dettagli ▲";
+            } else {
+                x.style.display = "none";
+                btn.innerHTML = "Vedi dettagli Enti di provenienza ▼";
             }
-        });
+        }
 
-        // 2. FATTORI DI PROTEZIONE (Aumento = Bene)
-        new Chart(document.getElementById('protectionChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Bambino', 'Famiglia', 'Ambiente'],
-                datasets: [
-                    {
-                        label: 'Pre (Inizio)',
-                        data: [2.97, 2.91, 3.11],
-                        backgroundColor: 'rgba(46, 204, 113, 0.4)', // Verde Chiaro
-                        borderColor: '#27ae60',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Post (Fine)',
-                        data: [3.94, 3.58, 3.88],
-                        backgroundColor: '#27ae60', // Verde Scuro (Risultato)
-                        borderColor: '#1e8449',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: false, min: 1, max: 5, title: {display: true, text: 'Scala 1-5'} }
-                },
-                plugins: { legend: { position: 'bottom' } }
-            }
-        });
+        // --- GRAFICI ---
 
-        // --- ALTRI GRAFICI (Fragilità ecc.) ---
-
-// --- GRAFICI FRAGILITÀ AGGIORNATI ---
-
-        // 3a. FRAGILITA PRINCIPALI (Le prime 8 - Verticali)
+        // 1. FRAGILITA PRINCIPALI
         new Chart(document.getElementById('fragilityChart'), {
             type: 'bar',
             data: {
                 labels: [
-                    'Economica', 
-                    'Eventi Traumatici', 
-                    'Abitativa', 
-                    'Assenza Genitori', 
-                    'Disagio Psic. Bambino', 
-                    'Isolamento Sociale', 
-                    'Disagio Psic. Famiglia', 
-                    'Bassa Scolarizzazione'
+                    'Economica', 'Eventi Traumatici', 'Abitativa', 'Assenza Genitori', 
+                    'Disagio Psic. Bambino', 'Isolamento Sociale', 'Disagio Psic. Famiglia', 'Bassa Scolarizzazione'
                 ],
                 datasets: [{
-                    label: '% Famiglie',
+                    label: 'Famiglie',
                     data: [51, 46, 42, 40, 40, 37, 34, 31],
-                    backgroundColor: '#ef7d07', // Rosso per tutte le barre
+                    backgroundColor: '#ef7d07', // Tuo arancione
                     borderRadius: 5
                 }]
             },
@@ -340,52 +289,98 @@
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 scales: {
-                    y: { beginAtZero: true, max: 60 } 
+                    y: { 
+                        beginAtZero: true, 
+                        max: 60,
+                        // ECCO L'AGGIUNTA DEL SIMBOLO PERCENTUALE % SULL'ASSE Y
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    } 
                 }
             }
         });
 
-        // 3b. FRAGILITA SECONDARIE (Le rimanenti - Orizzontali)
+        // 2. FRAGILITA SECONDARIE
         new Chart(document.getElementById('fragilitySecondaryChart'), {
             type: 'bar',
             data: {
                 labels: [
-                    'Migrazione', 
-                    'Incuria/Negligenza', 
-                    'Disabilità Bambino', 
-                    'Conflittualità Coppia', 
-                    'Maltrattamento', 
-                    'Transgenerazionale', 
-                    'Altro'
+                    'Migrazione', 'Incuria/Negligenza', 'Disabilità Bambino', 
+                    'Conflittualità Coppia', 'Maltrattamento', 'Transgenerazionale', 'Altro'
                 ],
                 datasets: [{
-                    label: '% Famiglie',
+                    label: 'Famiglie',
                     data: [23, 20, 20, 20, 11, 11, 9],
-                    backgroundColor: '#3498db', // Blu
+                    backgroundColor: 'rgba(239, 125, 7, 0.6)', // Arancione più tenue
                     borderRadius: 4,
                     barPercentage: 0.6
                 }]
             },
             options: { 
-                indexAxis: 'y', // Rende il grafico orizzontale
+                indexAxis: 'y', 
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 scales: {
-                    x: { beginAtZero: true, max: 30 } // Abbassato il max a 30 per proporzionare le barre
+                    x: { 
+                        beginAtZero: true, 
+                        max: 30,
+                        ticks: { callback: function(value) { return value + '%'; } }
+                    }
                 }
             }
         });
-        
-        // Placeholder Famiglie e Operatori (da riempire coi dati reali quando li hai)
-        new Chart(document.getElementById('familyTypeChart'), {
-            type: 'doughnut',
-            data: { labels: ['Tipo A', 'Tipo B'], datasets: [{ data: [50, 50], backgroundColor: ['#ddd', '#eee'] }] },
-            options: { maintainAspectRatio: false }
-        });
+
+        // 3. RETE OPERATORI (Barre orizzontali)
         new Chart(document.getElementById('operatorsChart'), {
             type: 'bar',
-            data: { labels: ['Ente A', 'Ente B'], datasets: [{ data: [10, 5], backgroundColor: '#34495e' }] },
-            options: { indexAxis: 'y', maintainAspectRatio: false }
+            data: {
+                labels: [
+                    'Assistenti Sociali', 'Psicologi', 'Pedagogista Scol.', 'Insegnanti', 
+                    'Neuropsichiatri', 'Educatori', 'Logopedisti', 'Operatori SISL', 
+                    'Psichiatri CPS', 'Psicomotricista NPI'
+                ],
+                datasets: [{
+                    label: 'Numero Totale',
+                    data: [31, 24, 18, 16, 15, 14, 6, 6, 2, 1], // Aggiornato il 31
+                    backgroundColor: '#ef7d07',
+                    borderRadius: 4
+                }]
+            },
+            options: { 
+                indexAxis: 'y', 
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { x: { beginAtZero: true } }
+            }
+        });
+
+        // 4. FATTORI DI RISCHIO
+        new Chart(document.getElementById('riskChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Bambino', 'Famiglia', 'Ambiente'],
+                datasets: [
+                    { label: 'Pre (Inizio)', data: [3.23, 3.80, 3.17], backgroundColor: 'rgba(231, 76, 60, 0.4)', borderColor: '#c0392b', borderWidth: 1 },
+                    { label: 'Post (Fine)', data: [2.73, 2.79, 2.67], backgroundColor: '#c0392b', borderColor: '#922b21', borderWidth: 1 }
+                ]
+            },
+            options: { scales: { y: { min: 1, max: 5 } }, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // 5. FATTORI DI PROTEZIONE
+        new Chart(document.getElementById('protectionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Bambino', 'Famiglia', 'Ambiente'],
+                datasets: [
+                    { label: 'Pre (Inizio)', data: [2.97, 2.91, 3.11], backgroundColor: 'rgba(46, 204, 113, 0.4)', borderColor: '#27ae60', borderWidth: 1 },
+                    { label: 'Post (Fine)', data: [3.94, 3.58, 3.88], backgroundColor: '#27ae60', borderColor: '#1e8449', borderWidth: 1 }
+                ]
+            },
+            options: { scales: { y: { min: 1, max: 5 } }, plugins: { legend: { position: 'bottom' } } }
         });
 
     </script>
