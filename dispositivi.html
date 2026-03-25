@@ -3,51 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P.I.P.P.I. - I Dispositivi</title>
+    <title>I Dispositivi - P.I.P.P.I.</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <div class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
-        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
-        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
-        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
-        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
-        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
+            <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
+            <li><a href="dispositivi.html" onclick="toggleMenu()" style="color: #ef7d07;">3. I Dispositivi</a></li>
+            <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
+            <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+        </ul>
     </div>
-    
-    <div class="background-art"></div>
-    <nav style="padding: 20px; text-align: center;">
-        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Home</a>
-    </nav>
 
-    <header class="hero" style="height: 40vh;">
+    <div class="background-art"></div>
+
+    <header class="hero">
         <div class="hero-content" data-aos="fade-down">
-            <h1>I Dispositivi Attivati</h1>
-            <p>L'intreccio delle azioni concrete a supporto del cambiamento.</p>
+            <h1>I Dispositivi</h1>
+            <p>Gli strumenti pratici per trasformare la progettazione in azioni quotidiane.</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="card glass-effect" data-aos="fade-up">
-            <h2>L'Intensità dell'Intervento</h2>
-            <p class="description">Volume di ore e risorse dedicate ai quattro dispositivi fondamentali del programma.</p>
+
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;" data-aos="fade-up">
+            <h2 style="color: #2c3e50;">Le Azioni del Programma</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
+                I dispositivi sono le leve operative del programma P.I.P.P.I. Non agiscono in isolamento, ma si integrano per creare un ecosistema di supporto attorno alla famiglia, lavorando sulla quotidianità, sulle reti formali e informali. Clicca su ogni dispositivo per approfondirne le specificità.
+            </p>
+        </div>
+
+        <div class="device-container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="device-card">
+                <div class="device-header" onclick="toggleDevice(this)">
+                    <div>
+                        <h3>Educativa Domiciliare</h3>
+                        <p class="device-short-desc">Supporto educativo direttamente nell'ambiente di vita della famiglia per affiancare i genitori nella quotidianità.</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="device-body">
+                    <p>L'educativa domiciliare nel modello P.I.P.P.I. non è un intervento sostitutivo, ma di "impalcatura" (scaffolding). L'educatore entra nello spazio intimo della casa per lavorare sulle routine quotidiane (il momento dei pasti, i compiti, il rito dell'addormentamento).</p>
+                    <p>L'obiettivo è rinforzare le competenze genitoriali *in situ*, valorizzando le risorse già presenti nella famiglia e aiutandola a riorganizzare gli spazi e i tempi di vita per rispondere meglio ai bisogni di sviluppo del bambino.</p>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-header" onclick="toggleDevice(this)">
+                    <div>
+                        <h3>Partenariato Scuola-Famiglia-Servizi</h3>
+                        <p class="device-short-desc">Costruzione di un'alleanza educativa solida e di un linguaggio comune tra tutti gli attori che ruotano attorno al bambino.</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="device-body">
+                    <p>Il bambino vive immerso in contesti diversi che spesso faticano a comunicare. Questo dispositivo mira a creare una vera e propria comunità educante. Insegnanti, operatori sociali e genitori si siedono allo stesso tavolo non per "giudicare", ma per co-costruire strategie condivise.</p>
+                    <p>Si lavora per abbattere la delega reciproca e favorire la continuità educativa tra casa e scuola, riconoscendo il ruolo fondamentale degli insegnanti come "antenne" dei bisogni e partner nel percorso di crescita.</p>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-header" onclick="toggleDevice(this)">
+                    <div>
+                        <h3>Gruppi Genitori e Bambini</h3>
+                        <p class="device-short-desc">Spazi di confronto e socializzazione per rompere l'isolamento e favorire il mutuo aiuto tra pari.</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="device-body">
+                    <p>Le vulnerabilità spesso portano le famiglie a isolarsi. I gruppi offrono uno spazio protetto in cui i genitori possono condividere fatiche, strategie e successi, scoprendo di non essere soli nelle loro difficoltà quotidiane.</p>
+                    <p>Parallelamente (o congiuntamente), i bambini vivono esperienze di socializzazione positiva. Il gruppo diventa un potente fattore di protezione che normalizza l'esperienza della genitorialità imperfetta e stimola l'empowerment attraverso l'aiuto reciproco.</p>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-header" onclick="toggleDevice(this)">
+                    <div>
+                        <h3>Vicinanza Solidale</h3>
+                        <p class="device-short-desc">Attivazione delle reti informali della comunità (vicini, volontari, altre famiglie) per un supporto leggero e quotidiano.</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="device-body">
+                    <p>Rappresenta l'essenza della "comunità che cura". Si tratta di affiancare alla famiglia vulnerabile delle figure non professionali (famiglie d'appoggio, volontari) che offrono un aiuto pratico e relazionale (es. accompagnare a scuola, passare un pomeriggio insieme).</p>
+                    <p>È un dispositivo cruciale per prevenire l'istituzionalizzazione, perché ricuce il tessuto sociale attorno al nucleo familiare, creando legami di fiducia "normali" che permangono anche dopo la fine dell'intervento formale dei servizi.</p>
+                </div>
+            </div>
+
+            <div class="device-card special-device" data-aos="zoom-in">
+                <div class="device-header" onclick="toggleDevice(this)">
+                    <div>
+                        <h3 style="display: flex; align-items: center; gap: 10px;">
+                            ★ Servizio di Sostegno alla Genitorialità 
+                            <span style="font-size: 0.7rem; background: #ef7d07; color: white; padding: 3px 8px; border-radius: 10px; font-weight: normal; vertical-align: middle;">Innovazione Locale</span>
+                        </h3>
+                        <p class="device-short-desc">Dispositivo integrativo specifico del nostro ambito territoriale, focalizzato sull'approfondimento psicologico ed educativo.</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="device-body">
+                    <p>Introdotto a partire dalla decima edizione per rispondere a bisogni emergenti specifici, questo dispositivo arricchisce il modello classico P.I.P.P.I. offrendo uno spazio clinico ed educativo altamente mirato.</p>
+                    <p>Consente ai genitori di lavorare, supportati da figure specialistiche, sulla regolazione emotiva, sulla consapevolezza dei propri stili educativi e sulla rielaborazione di vissuti complessi che impattano la relazione con i figli. È un ponte prezioso che unisce l'intervento socio-educativo con quello di supporto psicologico territoriale.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-divider"></div>
+
+        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 40px;">
+            <div class="card-header">
+                <h2>Attivazione dei Dispositivi</h2>
+                <p>Percentuale di famiglie coinvolte in ciascun dispositivo durante le annualità.</p>
+            </div>
             <div class="chart-container" style="height: 350px;">
-                <canvas id="graficoDispositivi"></canvas>
+                <canvas id="devicesChart"></canvas>
             </div>
         </section>
+
     </main>
 
-    <footer><p>Stanza 3 - Azioni Concrete</p></footer>
+    <footer>
+        <p>Progetto P.I.P.P.I. - Report Triennale</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script-dispositivi.js"></script>
+    <script src="script.js"></script> 
+    
+    <script>
+        // Inizializza animazioni
+        AOS.init();
+
+        // --- GESTIONE ACCORDION DISPOSITIVI ---
+        function toggleDevice(headerElement) {
+            // Prende la card genitore del click
+            const card = headerElement.parentElement;
+            
+            // Se clicco su uno già aperto, lo chiudo e basta
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                return;
+            }
+
+            // Chiude tutte le altre card prima di aprire quella nuova
+            document.querySelectorAll('.device-card').forEach(c => {
+                c.classList.remove('active');
+            });
+
+            // Apre la card cliccata
+            card.classList.add('active');
+        }
+
+        // --- GRAFICO ATTIVAZIONE DISPOSITIVI ---
+        Chart.defaults.font.family = "'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+        Chart.defaults.font.size = 14;
+
+        new Chart(document.getElementById('devicesChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Educativa Domiciliare', 
+                    'Partenariato Scuola', 
+                    'Sostegno Genitorialità (Speciale)', 
+                    'Gruppi Genitori/Bambini', 
+                    'Vicinanza Solidale'
+                ],
+                datasets: [{
+                    label: '% Famiglie Attivate',
+                    // DATI FITTIZI: Sostituisci questi numeri con le vere percentuali
+                    data: [85, 70, 45, 30, 15], 
+                    backgroundColor: [
+                        '#3498db', // Blu
+                        '#3498db',
+                        '#ef7d07', // Arancione aziendale per il dispositivo speciale
+                        '#3498db',
+                        '#3498db'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: { 
+                indexAxis: 'y', // Rende le barre orizzontali
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { 
+                        beginAtZero: true, 
+                        max: 100, // Fissato a 100%
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
