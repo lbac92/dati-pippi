@@ -3,84 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P.I.P.P.I. - L'Accoglienza</title>
+    <title>Accoglienza</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <div class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
-        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
-        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
-        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
-        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
-        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="accoglienza.html" onclick="toggleMenu()" style="color: #ef7d07;">Accoglienza</a></li>
+            <li><a href="cocostruzione.html" onclick="toggleMenu()">Incastro necessario</a></li>
+            <li><a href="dispositivi.html" onclick="toggleMenu()">L'agire che trasforma</a></li>
+            <li><a href="strumenti.html" onclick="toggleMenu()">Bussole da viaggio</a></li>
+            <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+        </ul>
     </div>
 
     <div class="background-art"></div>
 
-    <nav style="padding: 20px; text-align: center;">
-        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Torna all'Intro</a>
-    </nav>
-
-    <header class="hero" style="height: 40vh;"> <div class="hero-content" data-aos="fade-down">
-            <h1>L'Accoglienza</h1>
-            <p>Il primo passo: trasformare il bisogno in risorsa.</p>
+    <header class="hero">
+        <div class="hero-content" data-aos="fade-down">
+            <h1>Accoglienza</h1>
+            <p>Il primo passo per costruire la fiducia: lo spazio, il tempo e la relazione.</p>
         </div>
     </header>
 
     <main class="container">
 
-        <section class="card glass-effect" data-aos="fade-up">
-            <h2>Un Cambio di Prospettiva</h2>
-            <p class="description">
-                Nel sistema tradizionale l'accoglienza parte spesso dalla segnalazione del problema. 
-                In P.I.P.P.I., l'accoglienza è il primo passo per costruire un'alleanza con la famiglia, 
-                guardando non solo ai bisogni ma alle potenzialità.
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;" data-aos="fade-up">
+            <h2 style="color: #2c3e50;">Molto più di un semplice "inizio"</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
+                Nel Programma P.I.P.P.I., il primo momento di incontro con la famiglia è fondamentale. Curare ogni aspetto di questa fase, sia per quel che riguarda lo <strong>spazio fisico</strong> che l'<strong>attitudine mentale</strong>, significa gettare basi solide per una vera collaborazione. Non si tratta solo di raccogliere informazioni, ma di far sentire le persone attese, ascoltate e non giudicate.
             </p>
-        </section>
+        </div>
 
-        <section class="card glass-effect" data-aos="fade-up">
-            <h2>La voce dei protagonisti</h2>
-            <p class="description">Guarda il video racconto dell'esperienza.</p>
-    
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/ScMzIvxBSi4" 
-                    title="Video Player" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+        <div class="section-divider"></div>
 
-        <section class="card glass-effect" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-header">
-                <h2>Analisi della Domanda</h2>
+        <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;" data-aos="fade-up">Le professioni coinvolte nella prima fase di ingaggio della famiglia</h2>
+        
+        <div class="grid-2-col" style="margin-bottom: 50px;">
+            
+            <section class="card glass-effect" data-aos="fade-right">
+                <div class="card-header">
+                    <h2>I referenti del Pre-Assessment</h2>
+                    <p style="font-size: 0.85rem;">Figure professionali che individuano la famiglia e compilano la scheda iniziale.</p>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="compilatoriChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card glass-effect" data-aos="fade-left">
+                <div class="card-header">
+                    <h2>L'Equipe Multidisciplinare</h2>
+                    <p style="font-size: 0.85rem;">Percentuale di presenza delle altre figure professionali nella compilazione della scheda iniziale.</p>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="presentiChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <section class="card glass-effect" data-aos="fade-up" style="margin-bottom: 50px;">
+            <div class="card-header" style="text-align: center;">
+                <h2>Il Decalogo dell'Accoglienza</h2>
+                <p>Frutto di una mattinata di riflessione e lavoro con gli operatori coinvolti nel programma negli anni.</p>
             </div>
-            <p class="description">Confronto tra le tipologie di richieste iniziali.</p>
-            <div class="chart-container">
-                <canvas id="graficoAccoglienza"></canvas>
+
+            <div class="decalogo-grid">
+                <div class="decalogo-item"><span>1</span> Il benvenuto</div>
+                <div class="decalogo-item"><span>2</span> Sentire attenzioni</div>
+                <div class="decalogo-item"><span>3</span> Punti di riferimento</div>
+                <div class="decalogo-item"><span>4</span> Richieste su cosa ne pensiamo</div>
+                <div class="decalogo-item"><span>5</span> Sorrisi</div>
+                <div class="decalogo-item"><span>6</span> Spazio fisico</div>
+                <div class="decalogo-item"><span>7</span> Presentazione dello spazio</div>
+                <div class="decalogo-item"><span>8</span> Spiegazioni chiare</div>
+                <div class="decalogo-item"><span>9</span> Confronto</div>
+                <div class="decalogo-item"><span>10</span> Inclusione</div>
+            </div>
+
+            <h3 style="text-align: center; color: #2c3e50; margin-top: 40px;">Sfoglia il documento originale</h3>
+            <div class="pdf-preview-container">
+                <object data="Decalogo accoglienza.pdf" type="application/pdf" width="100%" height="100%">
+                    <p style="text-align: center; padding: 40px;">
+                        Il tuo browser non supporta la visualizzazione diretta dei PDF. <br><br>
+                        <a href="Decalogo accoglienza.pdf" target="_blank" style="color: #ef7d07; font-weight: bold; text-decoration: underline;">Clicca qui per scaricare il Decalogo dell'Accoglienza</a>
+                    </p>
+                </object>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>Stanza 1 - Il Sistema di Accoglienza</p>
+        <p>Progetto P.I.P.P.I. - Report Triennale</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script> 
     
-    <script src="script-accoglienza.js"></script>
+    <script>
+        AOS.init();
+        Chart.defaults.font.family = "'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+        Chart.defaults.font.size = 13;
+
+        // --- 1. GRAFICO COMPILATORI (Ciambella) ---
+        // Dati calcolati sul totale, convertiti in % per nascondere il numero grezzo
+        new Chart(document.getElementById('compilatoriChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Assistenti Sociali', 'Educatori', 'Psicologi'],
+                datasets: [{
+                    data: [86.8, 7.9, 5.3], 
+                    backgroundColor: ['#ef7d07', '#3498db', '#27ae60'],
+                    borderWidth: 1,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: { 
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ' ' + context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- 2. GRAFICO ALTRE FIGURE PRESENTI (Barre Orizzontali) ---
+        new Chart(document.getElementById('presentiChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Pedagogisti', 'Psicologi', 'Educatori', 'Neuropsichiatri', 'Insegnanti'],
+                datasets: [{
+                    label: '% di presenza nelle equipe',
+                    data: [60.5, 23.7, 21.1, 15.8, 2.6],
+                    backgroundColor: 'rgba(239, 125, 7, 0.8)', // Arancione aziendale
+                    borderRadius: 4
+                }]
+            },
+            options: { 
+                indexAxis: 'y', 
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.x + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 70, // Fissato per dare respiro alla barra più lunga
+                        ticks: {
+                            callback: function(value) { return value + '%'; }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

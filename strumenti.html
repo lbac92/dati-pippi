@@ -3,50 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P.I.P.P.I. - Gli Strumenti</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Bussole da viaggio</title>
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <div class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-        <li><a href="index.html" onclick="toggleMenu()">🏠 Home / Intro</a></li>
-        <li><a href="accoglienza.html" onclick="toggleMenu()">1. L'Accoglienza</a></li>
-        <li><a href="cocostruzione.html" onclick="toggleMenu()">2. Co-Costruzione</a></li>
-        <li><a href="dispositivi.html" onclick="toggleMenu()">3. I Dispositivi</a></li>
-        <li><a href="strumenti.html" onclick="toggleMenu()">4. Gli Strumenti</a></li>
-        <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="accoglienza.html" onclick="toggleMenu()">Accoglienza</a></li>
+            <li><a href="cocostruzione.html" onclick="toggleMenu()">Incastro necessario</a></li>
+            <li><a href="dispositivi.html" onclick="toggleMenu()">L'agire che trasforma</a></li>
+            <li><a href="strumenti.html" onclick="toggleMenu()" style="color: #ef7d07;">Bussole da viaggio</a></li>
+            <li style="margin-top: 40px;"><a href="#" onclick="toggleMenu()" style="font-size: 1rem; color: #999;">✕ Chiudi</a></li>
+        </ul>
     </div>
-    <div class="background-art"></div>
-    <nav style="padding: 20px; text-align: center;">
-        <a href="index.html" style="color: #e67e22; text-decoration: none; font-weight: bold;">← Home</a>
-    </nav>
 
-    <header class="hero" style="height: 40vh;">
+    <div class="background-art"></div>
+
+    <header class="hero">
         <div class="hero-content" data-aos="fade-down">
-            <h1>Gli Strumenti RPM</h1>
-            <p>Tecnologia e metodo al servizio del progetto sociale.</p>
+            <h1>Bussole da viaggio</h1>
+            <p>La "bussola" per orientare lo sguardo e l'intervento di rete.</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="card glass-effect" data-aos="fade-up">
-            <h2>Efficacia della Rilevazione</h2>
-            <p class="description">Percentuale di completamento delle rilevazioni pre e post intervento.</p>
-            <div class="chart-container">
-                <canvas id="graficoStrumenti"></canvas>
+
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;" data-aos="fade-up">
+            <h2 style="color: #2c3e50;">Una Cassetta degli Attrezzi in Evoluzione</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
+                Il Programma P.I.P.P.I. non offre un kit chiuso e rigido. Esistono numerosi strumenti operativi e viene costantemente incoraggiata la creazione di nuovi materiali che funzionino per specifici ambiti territoriali. Grazie a un'attiva <strong>comunità di pratiche</strong>, operatori e ricercatori condividono continuamente esperienze, schede e innovazioni.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #555; font-weight: bold; color: #ef7d07;">
+                Tuttavia, esiste un fondamento imprescindibile su cui si impernia tutto il lavoro: Il Mondo del Bambino.
+            </p>
+        </div>
+
+        <section class="card glass-effect" data-aos="zoom-in" style="margin-bottom: 50px;">
+            <div class="card-header" style="text-align: center;">
+                <h2>Il Mondo del Bambino (Il Triangolo)</h2>
+                <p>Lo strumento fondativo multidimensionale per l'assessment e la progettazione.</p>
             </div>
+            
+            <div class="triangle-image-container">
+                <img src="triangolo pippi.png" alt="Il Triangolo di P.I.P.P.I. - Il Mondo del Bambino">
+            </div>
+
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.05rem;">
+                Il Triangolo ci ricorda che lo sviluppo del bambino è l'esito dell'interazione tra i suoi <strong>bisogni di crescita</strong> (Azzurro), le <strong>risposte delle figure genitoriali</strong> (Viola) e i <strong>fattori ambientali e sociali</strong> (Verde). Seleziona un'area qui sotto per esplorarne le dimensioni.
+            </p>
+
+            <div class="tabs-container">
+                <button class="tab-btn tab-bambino-triangolo active" onclick="showTriangleDim('bambino', this)">Il Bambino</button>
+                <button class="tab-btn tab-famiglia-triangolo" onclick="showTriangleDim('famiglia', this)">La Famiglia</button>
+                <button class="tab-btn tab-ambiente-triangolo" onclick="showTriangleDim('ambiente', this)">L'Ambiente</button>
+            </div>
+
+            <div id="tri-bambino" class="dimension-box show" style="background: transparent; border: none; padding: 0;">
+                <div class="dimension-cards-grid">
+                    <div class="dim-card border-bambino">
+                        <h4>Salute e crescita</h4>
+                        <p>Riguarda il benessere fisico globale del bambino: la crescita adeguata, la nutrizione, l'igiene, lo sviluppo psicomotorio e la garanzia di cure mediche e specialistiche necessarie.</p>
+                    </div>
+                    <div class="dim-card border-bambino">
+                        <h4>Emozioni, pensieri, comunicazione e comportamenti</h4>
+                        <p>La capacità del bambino di riconoscere ed esprimere i propri sentimenti, di adattarsi ai cambiamenti, di comunicare i propri bisogni in modo adeguato all'età e di sviluppare un progressivo autocontrollo.</p>
+                    </div>
+                    <div class="dim-card border-bambino">
+                        <h4>Autostima</h4>
+                        <p>La percezione del proprio valore. Un bambino con buona autostima si sente amato, ha fiducia nelle proprie capacità, sviluppa un forte senso di identità personale e un senso di appartenenza.</p>
+                    </div>
+                    <div class="dim-card border-bambino">
+                        <h4>Relazioni familiari e sociali</h4>
+                        <p>La qualità dei legami di attaccamento con i genitori (o caregiver), le dinamiche con eventuali fratelli/sorelle e la capacità di stringere e mantenere amicizie positive con i coetanei e altri adulti.</p>
+                    </div>
+                    <div class="dim-card border-bambino">
+                        <h4>Apprendimento</h4>
+                        <p>Il naturale sviluppo cognitivo, la curiosità, la motivazione alla scoperta e l'acquisizione di nuove competenze e conoscenze, sia in contesti formali (scuola) che informali.</p>
+                    </div>
+                    <div class="dim-card border-bambino">
+                        <h4>Gioco e tempo libero</h4>
+                        <p>Il diritto al riposo, allo svago e all'attività ludica autonoma. Il gioco è lo strumento primario attraverso cui il bambino esplora il mondo, elabora i vissuti ed esprime la creatività.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tri-famiglia" class="dimension-box" style="background: transparent; border: none; padding: 0;">
+                <div class="dimension-cards-grid">
+                    <div class="dim-card border-famiglia">
+                        <h4>Cura di base, sicurezza e protezione</h4>
+                        <p>La capacità dei genitori di provvedere ai bisogni primari (cibo, vestiario, cure mediche, un ambiente domestico igienico) e di riconoscere e proteggere il bambino dai pericoli fisici ed emotivi.</p>
+                    </div>
+                    <div class="dim-card border-famiglia">
+                        <h4>Calore, affetto e stabilità emotiva</h4>
+                        <p>La garanzia di un legame sicuro. Significa offrire amore incondizionato, ascolto empatico, rassicurazione e un clima familiare prevedibile e sereno, fondamentale per lo sviluppo affettivo.</p>
+                    </div>
+                    <div class="dim-card border-famiglia">
+                        <h4>Guida, regole e valori</h4>
+                        <p>La funzione normativa genitoriale: stabilire limiti chiari, coerenti e positivi adeguati all'età, e trasmettere modelli etici e sociali che aiutino il bambino a interiorizzare le regole di convivenza.</p>
+                    </div>
+                    <div class="dim-card border-famiglia">
+                        <h4>Divertimento, stimoli e incoraggiamento</h4>
+                        <p>Promuovere lo sviluppo cognitivo offrendo occasioni di apprendimento, celebrando i successi, incoraggiando di fronte agli ostacoli e condividendo momenti di gioco e gioia in famiglia.</p>
+                    </div>
+                    <div class="dim-card border-famiglia">
+                        <h4>Autorealizzazione delle figure genitoriali</h4>
+                        <p>Il benessere globale (psicologico, sociale, relazionale) degli adulti che si prendono cura del bambino. Un genitore che sente di realizzarsi ha maggiori risorse emotive da investire nella genitorialità.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tri-ambiente" class="dimension-box" style="background: transparent; border: none; padding: 0;">
+                <div class="dimension-cards-grid">
+                    <div class="dim-card border-ambiente">
+                        <h4>Relazioni e sostegno sociale</h4>
+                        <p>La presenza e la qualità di una rete informale (famiglia allargata, amici, vicinato) e formale (servizi) in grado di offrire supporto pratico ed emotivo nei momenti di fatica del nucleo.</p>
+                    </div>
+                    <div class="dim-card border-ambiente">
+                        <h4>Lavoro e condizione economica</h4>
+                        <p>La stabilità occupazionale dei genitori e la disponibilità di risorse finanziarie sufficienti a garantire una qualità di vita dignitosa, senza che lo stress economico travolga il clima familiare.</p>
+                    </div>
+                    <div class="dim-card border-ambiente">
+                        <h4>Rapporto con la scuola e altre risorse</h4>
+                        <p>La capacità della famiglia di costruire alleanze costruttive con gli insegnanti, i servizi sanitari e altre agenzie educative, partecipando attivamente alla vita scolastica del figlio.</p>
+                    </div>
+                    <div class="dim-card border-ambiente">
+                        <h4>Partecipazione e inclusione</h4>
+                        <p>Il senso di appartenenza alla comunità locale. Avere accesso a opportunità culturali, ricreative e di cittadinanza, riducendo l'isolamento e il rischio di emarginazione sociale.</p>
+                    </div>
+                    <div class="dim-card border-ambiente">
+                        <h4>Abitazione</h4>
+                        <p>Disporre di uno spazio di vita salubre, adeguato al numero dei componenti, strutturalmente sicuro e dotato dei servizi di base, situato in un contesto di vicinato vivibile e non degradato.</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
+
     </main>
 
-    <footer><p>Stanza 4 - Metodologia e Tecnica</p></footer>
+    <footer>
+        <p>Progetto P.I.P.P.I. - Report Triennale</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script-strumenti.js"></script>
+    <script src="script.js"></script> 
+    <script>
+        AOS.init();
+
+        // Funzione per gestire i tab del Triangolo
+        function showTriangleDim(type, btn) {
+            // Nascondi tutte le sezioni
+            document.querySelectorAll('#tri-bambino, #tri-famiglia, #tri-ambiente').forEach(el => {
+                el.style.display = 'none';
+                el.classList.remove('show');
+            });
+            
+            // Rimuovi classe active dai bottoni
+            document.querySelectorAll('.tab-bambino-triangolo, .tab-famiglia-triangolo, .tab-ambiente-triangolo').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Mostra quella selezionata
+            document.getElementById('tri-' + type).style.display = 'block';
+            setTimeout(() => document.getElementById('tri-' + type).classList.add('show'), 10);
+            
+            // Attiva il bottone cliccato
+            btn.classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
